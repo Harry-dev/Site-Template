@@ -1,0 +1,65 @@
+// Browsehappy - Alert Message for IE8 Users that their software is not supported
+		.browsehappy {
+		position: relative;
+		background: red;
+		color: white;
+		padding: 40px;
+		font-size: 18px;
+		text-align: center;
+		border: 10px solid darken(red, 10%);
+		
+		a {
+			color: white;
+			text-decoration: underline;
+		}	
+	}
+
+// Rule Definition for Placeholder Text
+ 	.form-placeholder-rules(@rules) {
+
+		::-webkit-input-placeholder {
+		   	@rules();
+		}
+		
+		:-moz-placeholder { /* Firefox 18- */
+		  	@rules();
+		}
+		
+		::-moz-placeholder {  /* Firefox 19+ */
+		   	@rules();
+		}
+		
+		:-ms-input-placeholder {  
+			@rules();
+		}
+		
+		.form-control::-webkit-input-placeholder {
+		   	@rules();
+		}
+		
+		.form-control:-moz-placeholder { /* Firefox 18- */
+		  	@rules();
+		}
+		
+		.form-control::-moz-placeholder {  /* Firefox 19+ */
+		   	@rules();
+		}
+		
+		.form-control:-ms-input-placeholder {  
+			@rules();
+		}
+	} 
+
+
+// Negate Chrome's shitty yellow autofill background
+	input {
+		&:-webkit-autofill {
+		    -webkit-box-shadow: 0 0 0 1000px @white inset;
+		}
+
+		&.form-control {
+			&:-webkit-autofill {
+		 	  -webkit-box-shadow: 0 0 0 1000px @white inset;
+			}
+		}
+	}	

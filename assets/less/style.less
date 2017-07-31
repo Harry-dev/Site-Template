@@ -1,0 +1,666 @@
+/**
+* Theme Name: style.less Template
+* Description: Template for less Projects
+* Author: Harry Burk
+* Designer: -
+* Organisation: Swell Design Group
+* Version: 2.2.1
+* Tags: harry, crisp, html5, awesome
+*/
+
+
+
+/* ==========================================================================
+   Template to-do:
+   ========================================================================== 
+
+	1. Remove '-template' from less file name
+	2. Follow the README instructions
+	3. Update HTML + CSS file Meta Info
+	4. In script.js, Find + Replace 'Template' to name of new project
+	5. Set your presets (Colors, Fonts, Mixins, etc..) for this project
+	
+*/
+
+
+
+/* ==========================================================================
+   IMPORT - Initial Import Items
+   ========================================================================== */
+
+	// Default bootstrap mixin & shortcut settings (colors, font sizes, Navs, tooltips, + more)  
+		@import "vendor/variables.less";
+ 	
+ 	// Imports all the other 'vendor' bootstrap .less files (badges, grid, dropdowns, etc...)
+		@import "vendor/bootstrap.less";
+
+	// General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "bootstrap-variables.less";
+
+	// Ciri (not Siri)
+		@import "vader/ciri.less";
+
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+    // General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "vader/mediaqueries.less";
+
+
+
+/* ==========================================================================
+   BASE - Reset styles for default fonts, widths, and content centering
+   ========================================================================== */		
+
+	// General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "vader/base.less";
+
+
+
+/* ==========================================================================
+   MOBILE NAVIGATION
+   ========================================================================== */
+
+    // General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "vader/mobile-nav.less";
+
+
+
+/* ==========================================================================
+   MISC. (Placeholders & Other Common Aesthetic Resets)
+   ========================================================================== */
+
+   	// Odds n' Endz (Browsehappy, Placeholder Overrides, Chrome's shitty yellow autofill, etc..)
+		@import "vader/miscellaneous.less"; 	
+
+
+
+/* ==========================================================================
+   COLORS & FONTS
+   ========================================================================== */
+
+	/**
+	 * =COLORS
+	 */
+		/*-  Colors  -*/		/*-  Tones  -*/
+			@color1: #FF974F;	    @white: #F2F2F2;
+    
+			@color2: #F77A52;	    @smoke: #BDBDBD;
+    
+			@color3: #644D52;	    @medgrey: #7F7F7F;
+    
+			@color4: #332532;	    @charcoal: #424242;
+    
+			@color5: #D1274C;	    @black: #221e1f;
+			
+
+		// Check out the project's colour scheme
+			@import "vader/swatches.less"; 	 	
+
+
+	/**
+	 * =FONTS
+	 */
+	 
+		@import url(assets/font/fonts.css);
+	 	
+	 	@import url(assets/font/font-awesome.min.css);
+
+		
+		// Font Stacks
+		 	@font1: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif; 
+
+		 	@font2: '', helvetica, arial, sans-serif;
+
+		 	@font3: '', helvetica, arial, sans-serif;
+
+
+		// Font Weights
+			.font-light { font-weight: 300; }
+		 	.font-reg { font-weight: 400; }
+		 	.font-med { font-weight: 500; }
+		 	.font-bold { font-weight: 600; }
+		 	.font-black { font-weight: 900; }
+
+
+		// Font Mixins
+		 	.font-font1 { // Don't forget to find + replace after renaming
+		 		font-family: @font1;
+		 		.font-reg;
+		 	}
+
+	 		.font-font2 {
+		 		font-family: @font2;
+		 		.font-reg;
+		 	}
+
+	 		.font-font3 {
+		 		font-family: @font3;
+		 		.font-reg;
+		 	}
+
+		 	.font-awesome {
+				font-family: 'FontAwesome';	
+				line-height: 1;		
+				font-weight: normal !important;
+			}
+
+
+
+/* ==========================================================================
+   GLOBAL VARIABLES
+   ========================================================================== */
+
+	@i: !important;
+
+	@section-padding: 5rem 0;
+
+
+
+/* ==========================================================================
+   MIX-INS
+   ========================================================================== */
+	 	
+ 	//Push items that are fixed to top of the screen below the WP Admin Bar
+		.admin-offset {
+
+			body.admin-bar & {
+				margin-top: 32px;
+				
+				@media screen and (max-width: 782px) {
+					margin-top: 46px;
+				}
+			}
+		}
+
+
+	// Background Contain - BG Image with no repeat, center positioning, and contained to the element 
+	// NOT neccessary for SVG backgrounds - they have it built in with the 'svgBackgroundImg' mixin below
+		.bg-contain {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Background Cover - BG Image with no repeat, center positioning, and covering the element 
+		.bg-cover {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Standard Border - nothin' fancy
+		.border(@border-colour) {
+			border: 1px solid @border-colour;
+		}		
+
+
+	// Position an element absolute and centre it horizontally
+		.centre-absolute {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+
+	// Make an element fill it's parent DIV
+		.fill-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
+	// Use the variables to specify gradient colours + stop points
+		.gradient-bg {
+			@gradColor1: @color1;
+			@gradColor2: @color3;
+			@gradColor3: @color5;
+
+			@start: 0%;
+			@middle: 50%;
+			@end: 100%;
+
+			background: @color2; /* Old browsers */
+			background: -moz-linear-gradient(left,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@gradColor1', endColorstr='@gradColor3',GradientType=1 ); /* IE6-9 */
+ 		}
+
+
+ 	// Bump unsightly text (that's still necessary for screen-readers) into the abyss
+		.negative-indent {
+			display: block;
+			text-indent: -9999px;
+			overflow: hidden;
+		}
+
+
+	// Standard 'no-content' pseudo-element settings
+		.pseudo {
+			content: '';
+			display: block;
+			position: absolute;
+		}	
+
+
+	// Quick padding/margin settings
+ 		.spacing(@spacing-padding, @spacing-margin) {
+			padding: @spacing-padding;
+			margin: @spacing-margin;
+ 		}			
+
+
+	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
+	// Written Like: .staggered-transition(400, 200);
+		.staggered-transition(@delay, @increment) when (@delay < 4000) {
+			transition-delay: (@increment + @delay) + 0ms;
+		
+			+ * {
+		 		.staggered-transition( (@delay+@increment), @increment );
+			}
+		}	
+
+
+	// Easily set a background image when it is in SVG format
+	// Written like: .svgBackgroundImg('assets/img/image');
+		.svg-bg(@image-url) {
+			background-image: url("@{image-url}.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			// For browsers that do not support SVG (The class is automatically added to <html> by Modernizr)
+			.no-svg & { 
+				background-image: url("@{image-url}.png");
+			}
+		}
+
+
+	// TRANSITIONS:
+		.transition-xxs { transition: all 0.15s ease-out; }
+
+		.transition-xs { transition: all 0.3s ease-out; }
+
+		.transition-sm { transition: all 0.5s ease-out; }		
+
+		.transition-md { transition: all 0.7s ease-out; }
+
+		.transition-lg { transition: all 1.2s ease-out; }
+
+		.transition-xl { transition: all 1.6s ease-out; }  	
+
+		.transition-xxl { transition: all 2.2s ease-out; }   
+
+		.ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
+
+		.ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }
+
+
+
+/* ==========================================================================
+   ELEMENTS - Modals, Buttons, Tabs, Burgers etc..
+   ========================================================================== */	
+
+   	// BUTTONS
+		.btn {
+			margin: 2rem;
+
+			&.btn-primary {
+				background-color: @color5;
+			}
+
+			&.btn-secondary {
+				background-color: @color4;
+			}
+		}
+
+
+	// MODALS
+		.modal {
+
+			@background-color: @charcoal;
+			@highlight-color: @color1;
+			.modal-header {
+				background-color: @background-color;
+				border: none;
+
+				button {
+					text-shadow: none;
+					color: @highlight-color;
+					opacity: 1;
+					.transition-xs;
+
+					&:hover {
+						color: @smoke;
+					}
+				}
+
+				h4.modal-title {
+					color: @highlight-color;
+				}
+			}
+
+			.modal-body {
+				border: none;
+			}
+
+			.modal-footer {
+				background-color: @background-color;
+				border: none;
+			}
+		}
+
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+   	h1, h2, h3, h4, h5, h6, p, a {
+   		margin: 0;
+
+   		&.white { color: @white; }
+   		&.black { color: @black; }
+   	}
+
+	h1, .h1 {
+		.font-font1;
+	}
+
+	h2, .h2 {
+		.font-font1;
+	}
+
+	h3, .h3 {
+		.font-font1;
+	}
+
+	h4, .h4 {
+		.font-font1;
+	}
+
+	h5, .h5 {
+		.font-font1;
+	}
+
+	h6, .h6 {
+		.font-font1;
+	}
+
+	p, .p {
+		.font-font1;
+		font-size: 1.2rem;
+
+		/* Line Height - leading (20) divided by font size (12) */
+		line-height: 2/1.2;
+
+		/* Letter Spacing - tracking (50) divided by 1000 ems (aka + 3 decimal places) */
+		letter-spacing: 0.05em;
+
+		&.browsehappy {
+			.browsehappy;
+			position: fixed;
+			width: 50%;
+			top: 50%;
+			left: 25%;
+			z-index: 999999999;
+		}
+	}
+
+	a, .a {
+		.font-font1;
+
+		&:hover, &:focus {
+			color: @color1;
+		}
+	} 
+				 		
+
+
+/* ==========================================================================
+   NAVIGATION - Nav Bars + Elements
+   ========================================================================== */	
+
+		nav {
+
+			ul {
+
+				li {
+					display: inline;
+
+					&.active {
+
+						a {
+							color: @white;
+						}
+					}
+
+					a {
+						display: inline-block;
+						text-decoration: none !important;
+						padding: 10px 55px;
+						margin: 0 25px;
+						color: @color1;
+						background-color: @charcoal;
+						border: @charcoal 1px solid; 
+						.transition-xs;
+
+						&:hover {
+							border: @color2 1px solid;
+							background-color: transparent;
+							color: @smoke;
+						}
+
+						&:focus {
+							border-color: @color2;
+						}
+					}
+				}
+			}
+		} 
+
+		// Detects 'Body' position and applies .active to the #element (linked in the nav) that is currently scrolled to
+			@import "vader/scrolly.less";
+
+
+
+/* ==========================================================================
+   BODY
+   ========================================================================== */
+		
+body {
+	background-color: #999;
+	position: relative; // Neccessary to ensure ScrollSpy works correctly
+}
+
+
+
+// HEADER:
+@header-height: 8rem;
+header {
+	height: @header-height;
+	background-color: @black;
+}
+
+
+
+// SECTIONS:
+section {
+	padding: 3rem 0;
+	height: 100vh;
+}
+
+#splash {
+	// height: 100vh;
+	height: calc(~"100vh -" @header-height); // For use with a fixed header:
+	margin-top: @header-height;
+	background-color: @smoke;
+}
+
+#one {
+	background-color: lighten(@medgrey, 10%);
+}
+
+#two {
+	background-color: @medgrey;
+}			
+
+
+
+// FOOTER:
+@footer-height: 40rem;
+footer {
+	height: @footer-height;
+	background-color: @charcoal;
+}		
+
+
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */   
+
+	/**
+	 * =Contact Form 7
+	 */
+
+		form {
+
+			.form-group {
+
+				label {
+					display: none;
+				}
+
+				input {
+
+					&:hover {
+						border-color: @smoke;
+					}
+				}
+
+				.btn {
+
+					&:hover {
+						background-color: inherit;
+						color: @color2;
+						border-bottom: 0.7rem solid @color3;
+					}
+				}
+			}
+		}
+
+
+
+	/**
+	 * =Colliers
+	 */
+
+		form {
+
+			label {
+
+				.sck-label {
+
+				}
+
+				.sck-required {
+					color: @color1;
+				}
+			}
+
+			fieldset.sck-fieldset {
+				width: 100% !important;
+				float: none !important;
+				padding: 0 !important;
+			}
+
+			fieldset#sck-contact-one {
+
+				input {
+
+				}
+			}
+
+			fieldset#sck-contact-two {
+				
+				.sck-field {
+
+					.swl-select-wrapper {
+
+					}
+				}
+
+				.sck-checkbox {
+
+				}
+
+				.sck-buttons {
+					
+				}
+			}
+		}
+
+
+
+	/**
+	 * =Miscellaneous
+	 */
+
+		// Placeholder Rules
+		// This is a mixin (specfied in the vader/miscellaneous.less file) that is compatible cross-browser 
+		.form-placeholder-rules({
+			color: @color1;
+		});	  
+
+		// Enable standard 'select dropdown' on mobile
+		html.touch & {
+
+			.swl-select-wrapper {
+				position: relative;
+				
+				select {
+					display: block !important;
+					.fill-container;
+					opacity: 0;
+					z-index: 10;
+					cursor: pointer;
+					-webkit-appearance: menulist-button;
+				}
+			}	
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

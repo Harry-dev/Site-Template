@@ -1,0 +1,86 @@
+	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
+	// Use the variables to specify gradient colours + stop points
+		.gradientBG {
+			@gradColor1: @color1;
+			@gradColor2: @color3;
+			@gradColor3: @color5;
+
+			@start: 0%;
+			@middle: 50%;
+			@end: 100%;
+
+			background: @color2; /* Old browsers */
+			background: -moz-linear-gradient(left,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  @gradColor1 @start, @gradColor2 @middle, @gradColor3 @end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@gradColor1', endColorstr='@gradColor3',GradientType=1 ); /* IE6-9 */
+ 		}
+
+
+ 	// Stylish border 'Slide In' effect - On Hover
+		.border-slide-hover {
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: .5rem;
+				width: 100%;
+				background: @color1;			
+				transform: scale3d(0, 1, 1);
+				transition: transform 0.8s ease, background 0.8s ease;
+			}
+			&:hover::after {
+				transform: scale3d(1, 1, 1);
+				background: @color2;
+			}
+		}
+
+
+ 	// Stylish border 'Slide In' effect - On Click
+	// Note that this requires JS class handling i.e, 'li .button-active { .border-slide'
+		@keyframes border-slide {
+			0% {
+				transform: scale3d(0, 1, 1);
+			}
+
+			100% {
+				transform: scale3d(1, 1, 1);
+			}
+		}
+
+		.border-slide-click {
+			&::after {
+				content: '';
+				display: block;
+				position: relative;
+				bottom: 10px;
+				height: .3rem;
+				width: 100%;
+				background: @color1;			
+				animation: border-slide 1.2s 1;
+			}
+		}
+
+
+
+
+	// Custom transition - time in seconds + easing style
+	// Written like: .transitionCustom(0.4s, ease);
+		.transitionCustom(@transition-time, @transition-ease) {
+			transition: all @transition-time @transition-ease;
+		}
+
+		.transition-xxs { transition: all 0.15s ease-out; }
+
+		.transition-xs { transition: all 0.3s ease-out; }
+
+		.transition-sm { transition: all 0.5s ease-out; }		
+
+		.transition-md { transition: all 0.7s ease-out; }
+
+		.transition-lg { transition: all 1.2s ease-out; }
+
+		.transition-xl { transition: all 1.6s ease-out; }  	
+
+		.transition-xxl { transition: all 2.2s ease-out; } 

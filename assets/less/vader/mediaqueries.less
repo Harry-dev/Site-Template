@@ -1,0 +1,52 @@
+/**
+ * =MOBILE FIRST
+ */
+
+	// Mobile
+		.xs( @rules ) {
+			@media screen and ( min-width: @screen-xs-min ) { @rules(); }
+		}
+
+	// Mobile Landscape
+		.xs-ls( @rules ) {
+			@media screen and ( max-width: 780px ) and ( max-height: 480px ) and ( orientation: landscape ) { @rules(); }
+		}
+
+	// iPad/Tablets
+		.sm( @rules ) {
+			@media screen and ( min-width: @screen-sm-min ) { @rules(); }
+		}
+
+	// iPad/Tablets Landscape
+		.sm-ls( @rules ) {
+			@media screen and ( max-width: 980px ) and ( max-height: 880px ) and ( orientation: landscape ) { @rules(); }
+		}			
+
+	// Small Desktops/Laptops
+		.md( @rules ) {
+			@media screen and ( min-width: @screen-md-min ) { @rules(); }
+		}
+
+	// Large Desktops
+	  	.lg( @rules ) {
+	  		@media screen and ( min-width: @screen-lg-min ) { @rules(); }
+	  	}
+
+	// Extra Large Desktops
+	  	.xl( @rules ) {
+	  		@media screen and ( min-width: @screen-xl ) { @rules(); }
+	  	}  	
+	  	
+
+		
+		.retina( @rules ) {
+			@media 
+			screen and (-webkit-min-device-pixel-ratio: 2),
+			screen and (   min--moz-device-pixel-ratio: 2),
+			screen and (     -o-min-device-pixel-ratio: 2/1),
+			screen and (        min-device-pixel-ratio: 2),
+			screen and (                min-resolution: 192dpi),
+			screen and (                min-resolution: 2dppx) { 
+				@rules(); 
+			} 
+		}

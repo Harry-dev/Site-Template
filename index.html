@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ==========================================================================
+   HEAD
+=============================================================================== -->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" article="ie=edge">
+	<title>Template Site</title>
+    <meta name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <!-- Modernizr -->
+	<script src="assets/js/vendor/modernizr.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/hamburgers.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!-- TYPEKIT FONTS - harry@swelldesign.com.au (Aktiv Grotesk, FatFrank) -->
+	<script src="https://use.typekit.net/feb2cip.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+	<!-- Favicon -->
+	<!-- <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" /> -->
+</head>
+
+
+
+<!-- ==========================================================================
+   BODY
+=============================================================================== -->
+
+<body data-spy="scroll" data-target="#nav-main">
+	<div id="wrapper">
+
+		<!-- Mobile Nav -->
+		<div id="mobile-nav">
+			<!-- Nav Toggle -->
+				<!-- To reverse hamburger animation, append '-r' to the class name -->
+				<button id="nav-toggle" class="hamburger hamburger--spin" type="button">
+				  	<span class="hamburger-box">
+				    	<span class="hamburger-inner"></span>
+				  	</span>
+					<span class="hamburger-label">Menu</span>		    	
+				</button>
+
+			<aside id="mobile-drawer">
+				<nav id="mobile-nav-list">
+					<!-- COPY MAIN NAV HERE -->
+					<ul class="nav">
+						<li><a class="scroll" href="#">Nav 1</a></li>
+						<li><a class="scroll" href="#">Nav 2</a></li>
+						<li><a class="scroll" href="#">Nav 3</a></li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+
+		<!-- Modal 1 -->
+		<div class="modal fade" id="modal-swatches" tabindex="-1" role="dialog" aria-labelledby="modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Colour Swatches</h4>
+					</div>
+
+					<div class="modal-body">
+						<ul id="swatches-ul">
+							<li id="color1" class="color-swatch">color 1</li>
+							<li id="color2" class="color-swatch">color 2</li>
+							<li id="color3" class="color-swatch">color 3</li>
+							<li id="color4" class="color-swatch">color 4</li>
+							<li id="color5" class="color-swatch">color 5</li>
+							<br/>
+							<li id="tone1" class="color-swatch">white</li>
+							<li id="tone2" class="color-swatch">smoke</li>
+							<li id="tone3" class="color-swatch">medgrey</li>
+							<li id="tone4" class="color-swatch">charcoal</li>
+							<li id="tone5" class="color-swatch">black</li>
+							<br/>
+							<li id="gradient1" class="color-swatch">gradient</li>
+						</ul>
+					</div>
+
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- HEADER -->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-24">
+						<nav id="nav-main">
+							<!-- MAIN NAV -->
+							<ul class="nav">
+								<li><a class="scroll" href="#splash">Splash</a></li>
+								<li><a class="scroll" href="#one">Article</a></li>
+								<li><a class="scroll" href="#two">Content</a></li>
+								<li><a class="scroll" href="#footer">Footer</a></li>
+								<li><a class="scroll" href="" data-toggle="modal" data-target="#modal-swatches">Swatches</a></li>
+							</ul>
+							<!-- MAIN NAV -->
+						</nav>
+					</div>
+				</div>							
+			</div>						
+		</header>
+
+<!-- MAIN CONTENT -->
+		<section id="splash">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-24">
+							
+						<h1>splash title</h1>
+						<h2>catchy subheading</h2>
+
+					</div>							
+				</div>						
+			</div>
+		</section>
+
+		<section id="one">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-24">
+
+						<h3>article heading (H3)</h3>
+						
+						<article>
+							<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">Primary</button>
+							<button class="btn btn-secondary btn-sm">Secondary</button>
+
+							<p>VDub was a parody tagline, used in a short series of commercials for German car manufacturer Volkswagen. As part of a 2006 advertising campaign for Volkswagen, advertising agency Crispin Porter + Bogusky created a series of three television commercials directed by Jonas Åkerlund, starring Swedish actor Peter Stormare as an effete German engineer named Wolfgang, and German model Sonja Wöstendiek as his assistant Miss Helga. The ads were created as a parody of MTV's Pimp My Ride.</p>
+
+							<p>The commercials began airing in late February 2006. Prior to the full launch of the TV campaign, the three 30-second spots became something of an internet phenomenon when popular automotive news website Leftlane News uploaded the ads to video distribution service YouTube. As of early March 2006, the ads had received over two million views on YouTube. Three years later, that number was over 10 million.</p>
+						</article>
+
+					</div>							
+				</div>						
+			</div>
+		</section>
+
+		<section id="two">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-24">
+							
+						<h4>H4w about some content?</h4>
+						<h5>H5, Specifically</h5>
+
+						<article>
+							<p>Palla (Italian for ball) is a traditional Tuscan ball game played in villages between Siena and Grosseto. It is also called palla EH! (or pallaeh!) because players call out eh! before serving.</p>
+
+							<p>Small handmade balls contain a lead pellet wrapped in rubber and wool with a leather cover. The game is played by facing teams who strike (not catch) the ball with either a bare or gloved hand. Courts are marked out with painted lines on town streets, but there is no net, and players can move between sides. Adjacent buildings, objects, and sometimes spectators, are considered "in play." Play does stop for oncoming automobiles. Similar to real tennis, a second bounce can result in a "chase" rather than an outright point, marked in chalk where the ball stops rolling.</p>
+
+							<p>Scoring is identical to that of tennis (15-30-40-game). In the variant called pallaventuno (or palla 21) each game counts as 7, and a set is won with three games (7 for the first, 14 for the second, and 21 for the third, hence the name given to the game). In the other variant, games are simply counted in progression (game 1, game 2). Pallacorda (or palla della corda) is an extinct form of the game where a cord was strung across the street. Pisa, Prato, Rome, Siena, and various Tuscan towns still have streets named via Pallacorda or via Della Corda.</p>
+
+							<p>Palla is of interest to those who study the history of tennis, as it provides some insight into the development of the more contemporarily popular sport. Given the similarities of scoring and the use of chases, it is highly likely palla and tennis share a common sporting ancestor, the various games of palla being more primal in form.</p>
+
+							<p>The fact that real tennis was originally played without racquets is well documented. The name of the sport in French is jeu de paume, or game of the palm (of the hand). However, the development of the net is documented less well. In real tennis the net is also referred to sometimes as "the line." Palla eh! uses only a line painted on the ground to mark territory, and this is probably all it was originally. The cord was added for pallacorda probably just to keep the players on their respective sides of the court, and a ball that went under the cord, yet across the line, was probably still a fair shot. Later illustrations of pallacorda and tennis show tassels hung from the cord to indicate if a ball went below the cord. The net was merely an enhancement on the tassels, and it now serves three functions: marking territory, controlling player movement, and restricting the flight of the ball. When modern lawn tennis adopted real tennis' net, it also brought with it these three functions.</p>
+
+							<p>The fact that variants of palla are all street games, and that they are clearly related to real tennis suggests something of the development of the latter sport's court. It had been assumed that a real tennis court developed from the layout of monastery cloisters. This is mainly due to the early popularity of the game among clerics, and similarities of some court features to a cloister. However, this theory has two problems. Cloisters are usually square, while a tennis court is much longer than it is wide. Secondly, some of the similar features of tennis courts were actually introduced in the 16th century, and earlier layouts were less similar to cloisters. The study of palla has led many to suggest that the first tennis courts were made by those who wanted to play the street game, but could afford a more private and much cleaner setting. Similarities to cloisters in later court designs could either be coincidence, or intentional innovations. The proportions of the court and features such as penthouses and windows could easily relate to medieval streets.
+							</p>
+						</article>
+
+					</div>							
+				</div>						
+			</div>
+		</section>
+	</div>
+
+<!-- FOOTER -->
+	<footer id="footer">
+	    <div class="section-wrapper cell">
+	        <div class="cell-content">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-lg-24">
+	                        
+	                        <h6>A wild H6 content appeared!</h6>
+	                    
+	                    </div>                            
+	                </div>                      
+	            </div>
+	        </div>              
+	    </div>
+	</footer>	
+
+
+<!-- ==========================================================================
+   JAVASCRIPT
+=============================================================================== -->
+	
+	<!-- JQuery/JQuery UI -->
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	
+	<!-- JS/Bootstrap -->
+    <script src="assets/js/vendor/controls.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
