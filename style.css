@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 2.2.1
+* Version: 2.2.2
 * Tags: harry, crisp, html5, awesome
 */
 /* ==========================================================================
@@ -7865,10 +7865,11 @@ ul#swatches-ul {
   text-align: center;
 }
 ul#swatches-ul li {
+  position: relative;
   display: inline-block;
   height: 80px;
   width: 80px;
-  margin: 10px;
+  margin: 20px 10px;
   text-align: center;
 }
 ul#swatches-ul li#color1 {
@@ -7911,6 +7912,14 @@ ul#swatches-ul li#gradient1 {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradColor1', endColorstr='@gradColor3', GradientType=1);
   /* IE6-9 */
+}
+ul#swatches-ul li span {
+  position: absolute;
+  display: inline-block;
+  top: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 /**
 	 * =FONTS

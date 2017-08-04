@@ -6,10 +6,11 @@ ul#swatches-ul {
 	text-align: center;
 
 	li {
+		position: relative;
 		display: inline-block;
 		height: 80px;
 		width: 80px;
-		margin: 10px;
+		margin: 20px 10px;
 		text-align: center;
 
 		&#color1{background-color: @color1;}
@@ -25,5 +26,14 @@ ul#swatches-ul {
 		&#tone5{background-color: @black;}
 
 		&#gradient1{width: 500px;.gradient-bg;}
+
+		span {
+			position: absolute;
+			display: inline-block;
+			top: -20px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
 	}
 }	
