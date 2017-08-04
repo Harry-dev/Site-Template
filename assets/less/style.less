@@ -111,11 +111,9 @@
 
 		
 		// Font Stacks
-		 	@font1: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif; 
+		 	@font1: 'aktiv-grotesk', helvetica, arial, sans-serif; 
 
-		 	@font2: '', helvetica, arial, sans-serif;
-
-		 	@font3: '', helvetica, arial, sans-serif;
+		 	@font2: 'ProximaNova', helvetica, arial, sans-serif;
 
 
 		// Font Weights
@@ -127,18 +125,13 @@
 
 
 		// Font Mixins
-		 	.font-font1 { // Don't forget to find + replace after renaming
+		 	.font-aktiv { // Don't forget to find + replace after renaming
 		 		font-family: @font1;
 		 		.font-reg;
 		 	}
 
-	 		.font-font2 {
+	 		.font-proxima {
 		 		font-family: @font2;
-		 		.font-reg;
-		 	}
-
-	 		.font-font3 {
-		 		font-family: @font3;
 		 		.font-reg;
 		 	}
 
@@ -166,10 +159,9 @@
 	 	
  	//Push items that are fixed to top of the screen below the WP Admin Bar
 		.admin-offset {
-
 			body.admin-bar & {
 				margin-top: 32px;
-				
+			
 				@media screen and (max-width: 782px) {
 					margin-top: 46px;
 				}
@@ -375,31 +367,31 @@
    	}
 
 	h1, .h1 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	h2, .h2 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	h3, .h3 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	h4, .h4 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	h5, .h5 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	h6, .h6 {
-		.font-font1;
+		.font-aktiv;
 	}
 
 	p, .p {
-		.font-font1;
+		.font-aktiv;
 		font-size: 1.2rem;
 
 		/* Line Height - leading (20) divided by font size (12) */
@@ -419,7 +411,7 @@
 	}
 
 	a, .a {
-		.font-font1;
+		.font-aktiv;
 
 		&:hover, &:focus {
 			color: @color1;
@@ -435,6 +427,7 @@
 		nav {
 
 			ul {
+				margin-bottom: 0;
 
 				li {
 					display: inline;
@@ -447,17 +440,17 @@
 					}
 
 					a {
+						.border(@charcoal); 
 						display: inline-block;
-						text-decoration: none !important;
-						padding: 10px 55px;
-						margin: 0 25px;
+						text-decoration: none @i;
+						padding: 1rem 5.5rem;
+						margin: 0 2.5rem;
 						color: @color1;
 						background-color: @charcoal;
-						border: @charcoal 1px solid; 
 						.transition-xs;
 
 						&:hover {
-							border: @color2 1px solid;
+							.border(@color2);
 							background-color: transparent;
 							color: @smoke;
 						}
@@ -506,6 +499,7 @@ section {
 	height: calc(~"100vh -" @header-height); // For use with a fixed header:
 	margin-top: @header-height;
 	background-color: @smoke;
+	.bg-cover;
 }
 
 #one {

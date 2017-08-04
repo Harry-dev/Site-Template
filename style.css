@@ -4,19 +4,18 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 2.1.1
+* Version: 2.2.1
 * Tags: harry, crisp, html5, awesome
 */
 /* ==========================================================================
    Template to-do:
    ========================================================================== 
 
-	1. Remove '-template' from index + css files
-	2. Update HTML + CSS file Meta Info
-	3. In script.js, Find + Replace 'Template' to name of new project
-	4. Scroll through ALL presets (Colors, Fonts, Mixins, etc..) specifying settings unique to the project
-	5. Collect ALL possible assets prior to Dev. (Images, fonts, PDFs, colours, etc..)
-	6. Create Favicon
+	1. Remove '-template' from less file name
+	2. Follow the README instructions
+	3. Update HTML + CSS file Meta Info
+	4. In script.js, Find + Replace 'Template' to name of new project
+	5. Set your presets (Colors, Fonts, Mixins, etc..) for this project
 	
 */
 /* ==========================================================================
@@ -1082,14 +1081,10 @@ th {
   content: "\e260";
 }
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1149,8 +1144,6 @@ img {
   background-color: #ddd;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -3409,8 +3402,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -3456,16 +3447,12 @@ output {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control::-moz-placeholder {
@@ -3718,12 +3705,10 @@ select[multiple].input-lg {
 }
 .has-success .form-control {
   border-color: #3c763d;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .has-success .form-control:focus {
   border-color: #2b542c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
 }
 .has-success .input-group-addon {
@@ -3748,12 +3733,10 @@ select[multiple].input-lg {
 }
 .has-warning .form-control {
   border-color: #8a6d3b;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .has-warning .form-control:focus {
   border-color: #66512c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
 }
 .has-warning .input-group-addon {
@@ -3778,12 +3761,10 @@ select[multiple].input-lg {
 }
 .has-error .form-control {
   border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .has-error .form-control:focus {
   border-color: #843534;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
 }
 .has-error .input-group-addon {
@@ -3900,7 +3881,8 @@ select[multiple].input-lg {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -3934,7 +3916,6 @@ select[multiple].input-lg {
 .btn.active {
   outline: 0;
   background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn.disabled,
@@ -3943,7 +3924,6 @@ fieldset[disabled] .btn {
   cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 a.btn.disabled,
@@ -4357,7 +4337,6 @@ fieldset[disabled] .btn-danger.active {
 .btn-link[disabled],
 fieldset[disabled] .btn-link {
   background-color: transparent;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .btn-link,
@@ -4414,8 +4393,6 @@ input[type="button"].btn-block {
 }
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 .fade.in {
@@ -4437,11 +4414,8 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 .caret {
@@ -4479,7 +4453,6 @@ tbody.collapse.in {
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
@@ -4669,11 +4642,9 @@ tbody.collapse.in {
   padding-right: 12px;
 }
 .btn-group.open .dropdown-toggle {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn-group.open .dropdown-toggle.btn-link {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .btn .caret {
@@ -5306,7 +5277,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 10px 5px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   margin-top: 8px;
   margin-bottom: 8px;
@@ -5377,7 +5347,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
     padding-top: 0;
     padding-bottom: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 }
@@ -5940,8 +5909,6 @@ a.badge:focus {
   background-color: #ddd;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: border 0.2s ease-in-out;
-  -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
 }
 .thumbnail > img,
@@ -6055,7 +6022,6 @@ a.thumbnail.active {
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .progress-bar {
@@ -6067,55 +6033,41 @@ a.thumbnail.active {
   color: #fff;
   text-align: center;
   background-color: #ff5f5f;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
-  -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 .progress-striped .progress-bar,
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
 .progress.active .progress-bar,
 .progress-bar.active {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
-  -o-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
   background-color: #5cb85c;
 }
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-info {
   background-color: #5bc0de;
 }
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
   background-color: #f0ad4e;
 }
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
   background-color: #d9534f;
 }
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .media {
@@ -6377,7 +6329,6 @@ button.list-group-item-danger.active:focus {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
@@ -6748,7 +6699,6 @@ button.list-group-item-danger.active:focus {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .well blockquote {
@@ -6805,18 +6755,13 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
-  -o-transform: translate(0, -25%);
   transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6834,7 +6779,6 @@ button.close {
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   outline: 0;
@@ -6900,7 +6844,6 @@ button.close {
     margin: 30px auto;
   }
   .modal-content {
-    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
   .modal-sm {
@@ -7055,7 +6998,6 @@ button.close {
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .popover.top {
@@ -7168,8 +7110,6 @@ button.close {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-  -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 .carousel-inner > .item > img,
@@ -7178,15 +7118,12 @@ button.close {
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
-    -webkit-transition: -webkit-transform 0.6s ease-in-out;
-    -moz-transition: -moz-transform 0.6s ease-in-out;
-    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
     perspective: 1000px;
   }
   .carousel-inner > .item.next,
@@ -7253,8 +7190,6 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -7262,8 +7197,6 @@ button.close {
 .carousel-control.right {
   left: auto;
   right: 0;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -7709,15 +7642,6 @@ button.close {
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
-/* Using col-size-* we can make the responsivity process easy. 
-		- Size refers to the breakpoint that is targeted - if the screen is outside this size, there is no effect.
-		- * is the width of the column - it is calculated by being divided by the number of columns to equal a percentage. 
-			In the case of a 24 column site - my general standard - col-md-12 means that on laptops, the column will take up 
-			the percentage of 12/24 (50%), add col-sm-6 and it will take up 25% on iPads, then switch to 50% on laptop.
-		- I now work 'Mobile First' - which means you start from default (xs) and build up, working through the sizes
-			until you have desktop styling (lg).
-		- When building mobile first, don't forget to cascade the queries from smallest to largest (xs > sm > md).
-   */
 /**
  * =MOBILE FIRST
  */
@@ -7740,7 +7664,31 @@ button.close {
 }
 html {
   font-family: arial, sans-serif;
-  font-size: 10px;
+  font-size: 8.5px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 9.5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1480px) {
+  html {
+    font-size: 10px;
+  }
+}
+::-moz-selection {
+  background: #7F7F7F;
+  color: white;
 }
 ::selection {
   background: #7F7F7F;
@@ -7751,8 +7699,13 @@ header {
   width: 100%;
   z-index: 999;
 }
+header .section-wrapper,
+header .section-content {
+  position: relative;
+  height: 100%;
+}
 section {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 section .section-wrapper,
@@ -7788,6 +7741,18 @@ footer .footer-wrapper {
 /* ==========================================================================
    MOBILE NAVIGATION
    ========================================================================== */
+.hamburger:hover {
+  opacity: 0.5;
+}
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  width: 3rem;
+  background-color: #F77A52;
+}
+.hamburger .hamburger-label {
+  display: none;
+}
 /* ==========================================================================
    MOBILE NAVIGATION - Using Hamburger Menu
    ========================================================================== */
@@ -7886,196 +7851,13 @@ input.form-control:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #F2F2F2 inset;
 }
 /* ==========================================================================
-   MIX-INS
-   ========================================================================== */
-body.admin-bar .admin-offset {
-  margin-top: 32px;
-}
-@media screen and (max-width: 782px) {
-  body.admin-bar .admin-offset {
-    margin-top: 46px;
-  }
-}
-.border-slide-hover::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: .5rem;
-  width: 100%;
-  background: #FF974F;
-  transform: scale3d(0, 1, 1);
-  transition: transform 0.8s ease, background 0.8s ease;
-}
-.border-slide-hover:hover::after {
-  transform: scale3d(1, 1, 1);
-  background: #F77A52;
-}
-@keyframes border-slide {
-  0% {
-    transform: scale3d(0, 1, 1);
-  }
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
-.border-slide-click::after {
-  content: '';
-  display: block;
-  position: relative;
-  bottom: 10px;
-  height: .3rem;
-  width: 100%;
-  background: #FF974F;
-  animation: border-slide 1.2s 1;
-}
-.centre-absolute {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-.fill-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.gradientBG {
-  background: #F77A52;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #FF974F 0%, #644D52 50%, #D1274C 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #FF974F 0%, #644D52 50%, #D1274C 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #FF974F 0%, #644D52 50%, #D1274C 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradColor1', endColorstr='@gradColor3', GradientType=1);
-  /* IE6-9 */
-}
-.negative-indent {
-  font-size: 0;
-  display: block;
-  text-indent: -9999px;
-  overflow: hidden;
-}
-.transition-xxs {
-  transition: all 0.15s ease-out;
-}
-.transition-xs {
-  transition: all 0.3s ease-out;
-}
-.transition-sm {
-  transition: all 0.5s ease-out;
-}
-.transition-md {
-  transition: all 0.7s ease-out;
-}
-.transition-lg {
-  transition: all 1.2s ease-out;
-}
-.transition-xl {
-  transition: all 1.6s ease-out;
-}
-.transition-xxl {
-  transition: all 2.2s ease-out;
-}
-/* ==========================================================================
-   TYPOGRAPHY
-   ========================================================================== */
-h1,
-.h1 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-h2,
-.h2 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-h3,
-.h3 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  text-transform: capitalize;
-}
-h4,
-.h4 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h5,
-.h5 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-h6,
-.h6 {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-p,
-.p {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  /* Line Height is calculated by 'leading' (20) divided by 
-		the font size (12), which means 2/1.2 */
-  line-height: 1.66666667;
-  /* Letter Spacing is calculated by 'tracking' (50) divided by
-		1000 ems - 50/1000, or 50 + 3 decimal places */
-  letter-spacing: 0.05em;
-}
-p.browsehappy,
-.p.browsehappy {
-  position: relative;
-  background: red;
-  color: white;
-  padding: 40px;
-  font-size: 18px;
-  text-align: center;
-  border: 10px solid #cc0000;
-  position: fixed;
-  width: 50%;
-  top: 50%;
-  left: 25%;
-  z-index: 999999999;
-}
-p.browsehappy a,
-.p.browsehappy a {
-  color: white;
-  text-decoration: underline;
-}
-a,
-.a {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 400;
-  text-decoration: none !important;
-}
-a:hover,
-.a:hover,
-a:focus,
-.a:focus {
-  color: red;
-}
-/* ==========================================================================
    COLORS & FONTS
    ========================================================================== */
 /**
 	 * =COLORS
 	 */
-/*- Main color/s -*/
-/*- Highlights/Accents -*/
-/*- Tones -*/
-/* WHITE */
-/* Light Grey */
-/* Medium Grey */
-/* Dark Grey */
-/* BLACK */
+/*-  Colors  -*/
+/*-  Tones  -*/
 /* ==========================================================================
    COLOUR SWATCHES - Remove once colour pallette is confirmed
    ========================================================================== */
@@ -8123,9 +7905,7 @@ ul#swatches-ul li#gradient1 {
   width: 500px;
   background: #F77A52;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #FF974F 0%, #644D52 50%, #D1274C 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #FF974F 0%, #644D52 50%, #D1274C 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #FF974F 0%, #644D52 50%, #D1274C 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -8135,42 +7915,117 @@ ul#swatches-ul li#gradient1 {
 /**
 	 * =FONTS
 	 */
-.font-hairline {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
-  font-weight: 200;
-}
 .font-light {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 300;
 }
 .font-reg {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 400;
 }
 .font-med {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 500;
 }
 .font-bold {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 600;
 }
 .font-black {
-  font-family: 'aktiv-grotesk', 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 900;
 }
-.font-font2 {
-  font-family: '', helvetica, arial, sans-serif;
+.font-aktiv {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
   font-weight: 400;
 }
-.font-font3 {
-  font-family: '', helvetica, arial, sans-serif;
+.font-proxima {
+  font-family: 'ProximaNova', helvetica, arial, sans-serif;
   font-weight: 400;
 }
 .font-awesome {
   font-family: 'FontAwesome';
   line-height: 1;
   font-weight: normal !important;
+}
+/* ==========================================================================
+   GLOBAL VARIABLES
+   ========================================================================== */
+/* ==========================================================================
+   MIX-INS
+   ========================================================================== */
+body.admin-bar .admin-offset {
+  margin-top: 32px;
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .admin-offset {
+    margin-top: 46px;
+  }
+}
+.bg-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.centre-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.fill-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.gradient-bg {
+  background: #F77A52;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #FF974F 0%, #644D52 50%, #D1274C 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradColor1', endColorstr='@gradColor3', GradientType=1);
+  /* IE6-9 */
+}
+.negative-indent {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+}
+.transition-xxs {
+  transition: all 0.15s ease-out;
+}
+.transition-xs {
+  transition: all 0.3s ease-out;
+}
+.transition-sm {
+  transition: all 0.5s ease-out;
+}
+.transition-md {
+  transition: all 0.7s ease-out;
+}
+.transition-lg {
+  transition: all 1.2s ease-out;
+}
+.transition-xl {
+  transition: all 1.6s ease-out;
+}
+.transition-xxl {
+  transition: all 2.2s ease-out;
+}
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0.34, 0.36, 0.06, 1.01);
 }
 /* ==========================================================================
    ELEMENTS - Modals, Buttons, Tabs, Burgers etc..
@@ -8183,18 +8038,6 @@ ul#swatches-ul li#gradient1 {
 }
 .btn.btn-secondary {
   background-color: #332532;
-}
-.hamburger:hover {
-  opacity: 0.5;
-}
-.hamburger .hamburger-inner,
-.hamburger .hamburger-inner::before,
-.hamburger .hamburger-inner::after {
-  width: 3rem;
-  background-color: #F77A52;
-}
-.hamburger .hamburger-label {
-  display: none;
 }
 .modal .modal-header {
   background-color: #424242;
@@ -8220,30 +8063,137 @@ ul#swatches-ul li#gradient1 {
   border: none;
 }
 /* ==========================================================================
-   NAVIGATION - Nav Bars + Elements
+   TYPOGRAPHY
    ========================================================================== */
-nav#nav-main ul.nav li {
-  display: inline;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
 }
-nav#nav-main ul.nav li.active a {
+h1.white,
+h2.white,
+h3.white,
+h4.white,
+h5.white,
+h6.white,
+p.white,
+a.white {
   color: #F2F2F2;
 }
-nav#nav-main ul.nav li a {
+h1.black,
+h2.black,
+h3.black,
+h4.black,
+h5.black,
+h6.black,
+p.black,
+a.black {
+  color: #221e1f;
+}
+h1,
+.h1 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+h2,
+.h2 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+h3,
+.h3 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+h4,
+.h4 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+h5,
+.h5 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+h6,
+.h6 {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+p,
+.p {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  /* Line Height - leading (20) divided by font size (12) */
+  line-height: 1.66666667;
+  /* Letter Spacing - tracking (50) divided by 1000 ems (aka + 3 decimal places) */
+  letter-spacing: 0.05em;
+}
+p.browsehappy,
+.p.browsehappy {
+  position: relative;
+  background: red;
+  color: white;
+  padding: 40px;
+  font-size: 18px;
+  text-align: center;
+  border: 10px solid #cc0000;
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 25%;
+  z-index: 999999999;
+}
+p.browsehappy a,
+.p.browsehappy a {
+  color: white;
+  text-decoration: underline;
+}
+a,
+.a {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+a:hover,
+.a:hover,
+a:focus,
+.a:focus {
+  color: #FF974F;
+}
+/* ==========================================================================
+   NAVIGATION - Nav Bars + Elements
+   ========================================================================== */
+nav ul {
+  margin-bottom: 0;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li.active a {
+  color: #F2F2F2;
+}
+nav ul li a {
+  border: 1px solid #424242;
   display: inline-block;
   text-decoration: none !important;
-  padding: 10px 55px;
-  margin: 0 25px;
+  padding: 1rem 5.5rem;
+  margin: 0 2.5rem;
   color: #FF974F;
   background-color: #424242;
-  border: #424242 1px solid;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
-nav#nav-main ul.nav li a:hover {
-  border: #F77A52 1px solid;
+nav ul li a:hover {
+  border: 1px solid #F77A52;
   background-color: transparent;
   color: #BDBDBD;
 }
-nav#nav-main ul.nav li a:focus {
+nav ul li a:focus {
   border-color: #F77A52;
 }
 header {
@@ -8261,24 +8211,23 @@ header {
   height: 8rem;
   background-color: #221e1f;
 }
+section {
+  padding: 3rem 0;
+  height: 100vh;
+}
 #splash {
   height: calc(100vh - 8rem);
   margin-top: 8rem;
   background-color: #BDBDBD;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #one {
-  height: 80vh;
   background-color: #999999;
 }
-#one .content {
-  text-align: left;
-}
 #two {
-  height: 60vh;
   background-color: #7F7F7F;
-}
-#two .content {
-  text-align: left;
 }
 footer {
   height: 40rem;
