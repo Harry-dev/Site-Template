@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 2.2.2
+* Version: 2.3.0
 * Tags: harry, crisp, html5, awesome
 */
 
@@ -154,6 +154,37 @@
 
 
 /* ==========================================================================
+   UTILITY MIX-INS
+   ========================================================================== */
+
+	// Position an element absolute and centre it horizontally
+		.centre-absolute {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+
+	// Make an element fill it's parent DIV
+		.fill-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	// Quick padding/margin settings
+ 		.spacing(@spacing-padding, @spacing-margin) {
+			padding: @spacing-padding;
+			margin: @spacing-margin;
+ 		}	
+
+
+
+/* ==========================================================================
    MIX-INS
    ========================================================================== */
 	 	
@@ -192,25 +223,6 @@
 		}		
 
 
-	// Position an element absolute and centre it horizontally
-		.centre-absolute {
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-		}
-
-
-	// Make an element fill it's parent DIV
-		.fill-container {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-
 	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
 	// Use the variables to specify gradient colours + stop points
 		.gradient-bg {
@@ -230,27 +242,12 @@
  		}
 
 
- 	// Bump unsightly text (that's still necessary for screen-readers) into the abyss
-		.negative-indent {
-			display: block;
-			text-indent: -9999px;
-			overflow: hidden;
-		}
-
-
 	// Standard 'no-content' pseudo-element settings
 		.pseudo {
 			content: '';
 			display: block;
 			position: absolute;
-		}	
-
-
-	// Quick padding/margin settings
- 		.spacing(@spacing-padding, @spacing-margin) {
-			padding: @spacing-padding;
-			margin: @spacing-margin;
- 		}			
+		}			
 
 
 	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
