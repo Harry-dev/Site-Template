@@ -1953,6 +1953,12 @@
 		"oAP": "\/index.html",
 		"oF": 0
 		},
+	"\/resources\/BMW.tmTheme": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/resources\/BMW.tmTheme",
+		"oF": 0
+		},
 	"\/resources\/snippets.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1968,6 +1974,12 @@
 		"oAP": "\/style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/updates.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/updates.html",
+		"oF": 0
 		}
 	},
 "hooks": [
