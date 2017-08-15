@@ -8080,6 +8080,8 @@ h5,
 h6,
 p,
 a {
+  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
+  font-weight: 400;
   margin: 0;
 }
 h1.white,
@@ -8102,40 +8104,8 @@ p.black,
 a.black {
   color: #221e1f;
 }
-h1,
-.h1 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h2,
-.h2 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h3,
-.h3 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h4,
-.h4 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h5,
-.h5 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
-h6,
-.h6 {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
-}
 p,
 .p {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
   font-size: 1.2rem;
   /* Line Height - leading (20) divided by font size (12) */
   line-height: 1.66666667;
@@ -8161,11 +8131,6 @@ p.browsehappy a,
 .p.browsehappy a {
   color: white;
   text-decoration: underline;
-}
-a,
-.a {
-  font-family: 'aktiv-grotesk', helvetica, arial, sans-serif;
-  font-weight: 400;
 }
 a:hover,
 .a:hover,
