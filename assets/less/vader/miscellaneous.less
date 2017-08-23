@@ -1,5 +1,5 @@
 // Browsehappy - Alert Message for IE8 Users that their software is not supported
-		.browsehappy {
+	.browsehappy {
 		position: relative;
 		background: red;
 		color: white;
@@ -52,14 +52,14 @@
 
 
 // Negate Chrome's shitty yellow autofill background
-	input {
-		&:-webkit-autofill {
-		    -webkit-box-shadow: 0 0 0 1000px @white inset;
-		}
+	@-webkit-keyframes autofill {
+	    to {
+	        // color: #666;
+	        background: transparent;
+	    }
+	}
 
-		&.form-control {
-			&:-webkit-autofill {
-		 	  -webkit-box-shadow: 0 0 0 1000px @white inset;
-			}
-		}
-	}	
+	input:-webkit-autofill {
+	    -webkit-animation-name: autofill;
+	    -webkit-animation-fill-mode: both;
+	}

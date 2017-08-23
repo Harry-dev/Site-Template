@@ -7844,11 +7844,14 @@ footer .footer-wrapper {
   color: white;
   text-decoration: underline;
 }
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #F2F2F2 inset;
+@-webkit-keyframes autofill {
+  to {
+    background: transparent;
+  }
 }
-input.form-control:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #F2F2F2 inset;
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
 }
 /* ==========================================================================
    COLORS & FONTS
