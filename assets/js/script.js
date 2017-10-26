@@ -1,4 +1,4 @@
-var Template;
+var SD_Theme;
 
 ;(function ( $, window, document, undefined ){
 
@@ -8,32 +8,14 @@ var Template;
   * Object for namespacing theme functions.
   */
 
-	Template = {
+	SD_Theme = {
 
 	 /**
 	  * Initialiser.
 	  */
 
 		init: function(){
-			Template.initMobileMenu();
-			Template.initScroll();
-			// Template.initCiri();
-		},
-
-
-	/**
-	  * Add the class 'scroll' on any <a> element to make it smoothly scroll to anchor 
-	  * NOTE: Only works when Underswell is installed, or with the lib > assets > JS files (easings, scroll, etc..) 
-	  		placed in main assets folder)
-	  */	
-
-		initScroll: function(){
-
-			$(".scroll").click(function(event) {
-				event.preventDefault();
-				$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);
-			} );
-
+			SD_Theme.initMobileMenu();
 		},
 
 	 /**
@@ -46,7 +28,7 @@ var Template;
 			var toggle = $('#nav-toggle');
 			toggle.click(function(e){
 				e.preventDefault();
-				$('body').toggleClass('menu-open');
+				$('body').toggleClass('nav-main-open');
 				toggle.toggleClass('is-active');
 				$(this).blur();
 			});
@@ -54,12 +36,12 @@ var Template;
 			// Open on click
 			$(document).click(function(e){
 				var target = $(e.target);
-				if( ! $('body').hasClass('menu-open') ) {
+				if( ! $('body').hasClass('nav-main-open') ) {
 					return;
 				}
-				if( ! target.is('nav.mobile, #nav-toggle') && target.parents('nav.mobile, #nav-toggle').length <= 0 ) {
+				if( ! target.is('nav#nav-main, #nav-toggle') && target.parents('nav#nav-main, #nav-toggle').length <= 0 ) {
 					e.preventDefault();
-					$('body').removeClass('menu-open');
+					$('body').removeClass('nav-main-open');
 					toggle.removeClass('is-active');
 					$(this).blur();
 				}
@@ -70,7 +52,7 @@ var Template;
 				if( $(window).width() > 700 ) {
 					return;
 				}
-				$('body').removeClass('menu-open');
+				$('body').removeClass('nav-main-open');
 				toggle.removeClass('is-active');				
 			});
 
@@ -83,14 +65,7 @@ var Template;
   */
 
 	$(document).ready(function() {
-		Template.init();
+		SD_Theme.init();
 	});
 
 })(jQuery, window, document);
-
-
-
-
-
-
-

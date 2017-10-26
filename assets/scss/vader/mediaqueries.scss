@@ -1,0 +1,31 @@
+/**
+ * =MOBILE FIRST
+ */
+		
+	@mixin xl {
+  		@include media-breakpoint-up(xl) { @content; }
+  	}
+  	
+  	@mixin lg {
+  		@include media-breakpoint-down(lg) { @content; }
+  	}
+  	
+	@mixin md {
+  		@include media-breakpoint-down(md) { @content; }
+	}
+
+	@mixin sm {
+  		@include media-breakpoint-down(sm) { @content; }
+	}
+
+	@mixin xs {
+  		@include media-breakpoint-down(xs) { @content; }
+	}
+  	
+  	@mixin nav_visible {
+  		@media screen and ( min-width: $grid-float-breakpoint) { @content; }
+  	}
+
+	@mixin nav_collapsed {
+		@media screen and ( max-width: $grid-float-breakpoint-max) { @content; }
+	}  

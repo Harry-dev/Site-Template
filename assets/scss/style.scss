@@ -1,0 +1,634 @@
+/**
+* Theme Name: style.less Template
+* Description: Template for less Projects
+* Author: Harry Burk
+* Designer: -
+* Organisation: Swell Design Group
+* Version: 3.0.0
+* Tags: harry, crisp, html5, bootstrap4, awesome
+*/
+
+
+
+/* ==========================================================================
+   IMPORT - Initial Import Items
+   ========================================================================== */
+
+	// See variables.scss for complete set of bootstrap overrides 
+		@import "bootstrap/bootstrap"; 
+
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+    // General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "vader/mediaqueries.scss";
+
+
+
+/* ==========================================================================
+   BASE - Reset styles for default fonts, widths, and content centering
+   ========================================================================== */		
+
+	// General default settings (Grid columns, container sizes, colors, and iconography)
+		@import "vader/base.scss";
+
+
+
+/* ==========================================================================
+   MISC. (Placeholders & Other Common Aesthetic Resets)
+   ========================================================================== */
+
+   	// Odds n' Endz (Browsehappy, Placeholder Overrides, Chrome's shitty yellow autofill, etc..)
+		@import "vader/miscellaneous.scss"; 	
+
+
+
+/* ==========================================================================
+   COLORS & FONTS
+   ========================================================================== */
+
+	/**
+	 * =COLORS
+	 */
+		/*-  Colors  -*/		/*-  Tones  -*/
+			$color1: #E53C42;	    $white: #F9FFFF;
+    
+			$color2: #263338;	    $smoke: #D5D9D9;
+    
+			$color3: #263338;	    $grey: #858A8A;
+    
+			$color4: #263338;	    $charcoal: #30393D;
+    
+			$color5: #263338;	    $black: #0C1014;
+			
+			@mixin gradient-bg {
+				$gradColor1: $color1;
+				$gradColor2: $color3;
+				$gradColor3: $color5;
+
+				$start: 0%;
+				$middle: 50%;
+				$end: 100%;
+
+				background: $color2; /* Old browsers */
+				background: -moz-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradColor1', endColorstr='$gradColor3',GradientType=1 ); /* IE6-9 */
+	 		}
+
+		// Check out the project's colour scheme
+			@import "vader/swatches.scss"; 	 	
+
+
+	/**
+	 * =FONTS
+	 */
+	 
+		@import url(assets/font/fonts.css);
+	 	
+	 	@import url(assets/font/font-awesome.min.css);
+
+		
+		// Font Stacks
+		 	$font1: 'aktiv-grotesk', helvetica, arial, sans-serif; 
+
+		 	$font2: 'ProximaNova', helvetica, arial, sans-serif;
+
+
+		// Font Mixins
+		 	@mixin font-aktiv { // Don't forget to find + replace after renaming
+		 		font-family: $font1;
+		 	}
+
+	 		@mixin font-proxima {
+		 		font-family: $font2;
+		 	}
+
+		 	@mixin font-awesome() {
+		 		font-family: 'FontAwesome';	
+		 		font-weight: normal !important;
+		 		font-style: normal !important;					
+		 	}  	
+		 	
+		 	@mixin ion-icons() {
+		 		font-family: 'Ionicons';
+		 		font-weight: normal !important;
+		 		font-style: normal !important;
+		 	}
+
+
+
+/* ==========================================================================
+   GLOBAL VARIABLES
+   ========================================================================== */
+
+	$i: !important;
+
+	$section-padding: 5rem 0;
+
+
+
+/* ==========================================================================
+   UTILITY MIX-INS
+   ========================================================================== */
+
+	// Position an element absolute and centre it horizontally
+		@mixin centre-absolute {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+
+	// Make an element fill it's parent DIV
+		@mixin fill-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	// Quick padding/margin settings
+ 		@mixin spacing($spacing-padding, $spacing-margin){
+			padding: $spacing-padding;
+			margin: $spacing-margin;
+ 		}	
+
+
+
+/* ==========================================================================
+   MIX-INS
+   ========================================================================== */
+	 	
+ 	//Push items that are fixed to top of the screen below the WP Admin Bar
+		@mixin admin-offset {
+			body.admin-bar & {
+				margin-top: 32px;
+			
+				@media screen and (max-width: 782px) {
+					margin-top: 46px;
+				}
+			}
+		}
+
+
+	// Background Contain - BG Image with no repeat, center positioning, and contained to the element 
+	// NOT neccessary for SVG backgrounds - they have it built in with the 'svgBackgroundImg' mixin below
+		@mixin bg-contain {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Background Cover - BG Image with no repeat, center positioning, and covering the element 
+		@mixin bg-cover {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Standard Border - nothin' fancy
+		@mixin border($border-colour){
+			border: 1px solid $border-colour;
+		}		
+
+
+	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
+	// Use the variables to specify gradient colours + stop points
+		@mixin gradient-bg {
+			$gradColor1: $color1;
+			$gradColor2: $color3;
+			$gradColor3: $color5;
+
+			$start: 0%;
+			$middle: 50%;
+			$end: 100%;
+
+			background: $color2; /* Old browsers */
+			background: -moz-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradColor1', endColorstr='$gradColor3',GradientType=1 ); /* IE6-9 */
+ 		}
+
+
+	// Standard 'no-content' pseudo-element settings
+		@mixin pseudo {
+			content: '';
+			display: block;
+			position: absolute;
+		}			
+
+
+	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
+	// Written Like: @include staggered-transition(400, 200);
+		@mixin delay-transition($offset: 1s, $count: 10, $delay: 50) {
+			@for $i from 1 through $count {
+				$time: ($i * $offset) + $delay;
+				&:nth-child(#{$i}) {
+					transition-delay: $time;
+				}
+			}
+		}
+
+
+	// Easily set a background image when it is in SVG format
+	// Written like: @include svgBackgroundImg('assets/img/image');
+		@mixin svg-bg($image-url){
+			background-image: url("${image-url}.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			// For browsers that do not support SVG (The class is automatically added to <html> by Modernizr)
+			.no-svg & { 
+				background-image: url("${image-url}.png");
+			}
+		}
+
+
+	// TRANSITIONS:
+		@mixin transition-xxs { transition: all 0.15s ease-out; }
+
+		@mixin transition-xs { transition: all 0.3s ease-out; }
+
+		@mixin transition-sm { transition: all 0.5s ease-out; }		
+
+		@mixin transition-md { transition: all 0.7s ease-out; }
+
+		@mixin transition-lg { transition: all 1.2s ease-out; }
+
+		@mixin transition-xl { transition: all 1.6s ease-out; }  	
+
+		@mixin transition-xxl { transition: all 2.2s ease-out; }   
+
+		@mixin ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
+
+		@mixin ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }
+
+
+
+/* ==========================================================================
+   ELEMENTS - Modals, Buttons, Tabs, Burgers etc..
+   ========================================================================== */	
+
+   	// BUTTONS
+		.btn {
+			margin: 2rem;
+
+			&.btn-primary {
+				background-color: $color5;
+			}
+
+			&.btn-secondary {
+				background-color: $color4;
+			}
+		}
+
+
+	// MODALS
+		.modal {
+
+			.modal-dialog {
+				max-width: 750px;
+			}
+
+			$background-color: $charcoal;
+			$highlight-color: $color1;
+			.modal-header {
+				background-color: $background-color;
+				border: none;
+
+				button {
+					text-shadow: none;
+					color: $highlight-color;
+					opacity: 1;
+					@include transition-xs;
+
+					&:hover {
+						color: $smoke;
+					}
+				}
+
+				h4.modal-title {
+					color: $highlight-color;
+				}
+			}
+
+			.modal-body {
+				border: none;
+			}
+
+			.modal-footer {
+				background-color: $background-color;
+				border: none;
+			}
+		}
+
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+   	h1, h2, h3, h4, h5, h6, p, a {
+   		@include font-aktiv;
+   		margin: 0;
+
+   		&.white { color: $white; }
+   		&.black { color: $black; }
+   	}
+
+	h1, .h1 {
+
+	}
+
+	h2, .h2 {
+
+	}
+
+	h3, .h3 {
+
+	}
+
+	h4, .h4 {
+
+	}
+
+	h5, .h5 {
+
+	}
+
+	h6, .h6 {
+
+	}
+
+	p, .p {
+		font-size: 1.2rem;
+
+		/* Line Height - leading (20) divided by font size (12) */
+		line-height: 2/1.2;
+
+		/* Letter Spacing - tracking (50) divided by 1000 ems (aka + 3 decimal places) */
+		letter-spacing: 0.05em;
+
+		&.browsehappy {
+			// @include browsehappy;
+			position: fixed;
+			width: 50%;
+			top: 50%;
+			left: 25%;
+			z-index: 999999999;
+		}
+	}
+
+	a, .a {
+
+		&:hover, &:focus {
+			color: $color1;
+		}
+	} 
+				 		
+
+
+/* ==========================================================================
+   NAVIGATION - Nav Bars + Elements
+   ========================================================================== */	
+
+		nav {
+
+			ul {
+				margin-bottom: 0;
+
+				li {
+					display: inline;
+
+					&.active {
+
+						a {
+							color: $white;
+						}
+					}
+
+					a {
+						@include border($charcoal); 
+						display: inline-block;
+						text-decoration: none $i;
+						padding: 1rem 5.5rem;
+						margin: 0 2.5rem;
+						color: $color1;
+						background-color: $charcoal;
+						@include transition-xs;
+
+						&:hover {
+							@include border($color2);
+							background-color: transparent;
+							color: $smoke;
+						}
+
+						&:focus {
+							border-color: $color2;
+						}
+					}
+				}
+			}
+		} 
+
+
+
+/* ==========================================================================
+   BODY
+   ========================================================================== */
+		
+body {
+	background-color: #999;
+	position: relative; // Neccessary to ensure ScrollSpy works correctly
+}
+
+
+
+// HEADER:
+$header-height: 8rem;
+header {
+	height: $header-height;
+	background-color: $black;
+}
+
+
+
+// SECTIONS:
+section {
+	padding: 3rem 0;
+	height: 100vh;
+}
+
+#splash {
+	height: 100vh;
+	background-color: $smoke;
+	@include bg-cover;
+}
+
+#one {
+	background-color: lighten($grey, 10%);
+}
+
+#two {
+	background-color: $grey;
+}			
+
+
+
+// FOOTER:
+$footer-height: 40rem;
+footer {
+	height: $footer-height;
+	background-color: $charcoal;
+}		
+
+
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */   
+
+	/**
+	 * =Contact Form 7
+	 */
+
+		form {
+
+			.form-group {
+
+				label {
+					display: none;
+				}
+
+				input {
+
+					&:hover {
+						border-color: $smoke;
+					}
+				}
+
+				.btn {
+
+					&:hover {
+						background-color: inherit;
+						color: $color2;
+						border-bottom: 0.7rem solid $color3;
+					}
+				}
+			}
+		}
+
+
+
+	/**
+	 * =Colliers
+	 */
+
+		form {
+
+			label {
+
+				.sck-label {
+
+				}
+
+				.sck-required {
+					color: $color1;
+				}
+			}
+
+			fieldset.sck-fieldset {
+				width: 100% !important;
+				float: none !important;
+				padding: 0 !important;
+			}
+
+			fieldset#sck-contact-one {
+
+				input {
+
+				}
+			}
+
+			fieldset#sck-contact-two {
+				
+				.sck-field {
+
+					.swl-select-wrapper {
+
+					}
+				}
+
+				.sck-checkbox {
+
+				}
+
+				.sck-buttons {
+					
+				}
+			}
+		}
+
+
+
+	/**
+	 * =Miscellaneous
+	 */
+
+		// Placeholder Rules
+		// This is a mixin (specfied in the vader/miscellaneous.less file) that is compatible cross-browser 
+		.form-placeholder-rules {
+			color: $color1;
+		};	  
+
+		// Enable standard 'select dropdown' on mobile
+		.swl-select-wrapper {
+			position: relative;
+			
+			html.touch & {
+				select {
+					display: block !important;
+					@include fill-container;
+					opacity: 0;
+					z-index: 10;
+					cursor: pointer;
+					-webkit-appearance: menulist-button;
+				}
+			}
+		}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
