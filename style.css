@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.1
+* Version: 3.0.2
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 /* ==========================================================================
@@ -7248,6 +7248,25 @@ ul#swatches-ul {
    ========================================================================== */
 .btn {
   margin: 2rem; }
+  .btn.btn-primary {
+    background: #263338;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #E53C42 0%, #263338 50%, #263338 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradColor1', endColorstr='$gradColor3',GradientType=1 );
+    /* IE6-9 */
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    border-radius: 100%;
+    border-color: #F9FFFF;
+    transition: all 0.3s ease-out; }
+    .btn.btn-primary:hover {
+      border-color: #30393D; }
 
 .modal .modal-dialog {
   max-width: 750px; }
@@ -7255,15 +7274,16 @@ ul#swatches-ul {
 .modal .modal-header {
   background-color: #30393D;
   border: none; }
-  .modal .modal-header button {
+  .modal .modal-header h4.modal-title {
+    color: #E53C42; }
+  .modal .modal-header button.close {
+    font-size: 2.5rem;
     text-shadow: none;
     color: #E53C42;
     opacity: 1;
     transition: all 0.3s ease-out; }
-    .modal .modal-header button:hover {
+    .modal .modal-header button.close:hover {
       color: #D5D9D9; }
-  .modal .modal-header h4.modal-title {
-    color: #E53C42; }
 
 .modal .modal-body {
   border: none; }

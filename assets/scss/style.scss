@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.1
+* Version: 3.0.2
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 
@@ -284,6 +284,22 @@
    	// BUTTONS
 		.btn {
 			margin: 2rem;
+
+			&.btn-primary {
+				@include gradient-bg;
+				position: fixed;
+				width: 5rem;
+				height: 5rem;
+				bottom: 2.5rem;
+				right: 2.5rem;
+				border-radius: 100%;
+				border-color: $white;
+				@include transition-xs;
+
+				&:hover {
+					border-color: $charcoal;
+				}
+			}
 		}
 
 
@@ -299,8 +315,13 @@
 			.modal-header {
 				background-color: $background-color;
 				border: none;
+				
+				h4.modal-title {
+					color: $highlight-color;
+				}
 
-				button {
+				button.close {
+					font-size: 2.5rem;
 					text-shadow: none;
 					color: $highlight-color;
 					opacity: 1;
@@ -309,10 +330,6 @@
 					&:hover {
 						color: $smoke;
 					}
-				}
-
-				h4.modal-title {
-					color: $highlight-color;
 				}
 			}
 
