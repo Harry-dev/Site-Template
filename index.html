@@ -72,9 +72,9 @@
 			</div>
 		</div>
 
-<!-- HEADER -->
+		<!-- HEADER -->
 		<header>
-		<div class="section-content">
+			<div class="section-content">
 				<div class="section-wrapper cell">
 					<div class="cell-content">
 						<div class="container">
@@ -86,7 +86,6 @@
 										<ul>
 											<li><a class="scroll" href="#splash">Splash</a></li>
 											<li><a class="scroll" href="#one">Article</a></li>
-											<li><a class="scroll" href="#two">Content</a></li>
 											<li><a class="scroll" href="#footer">Footer</a></li>
 											<li><a class="scroll" href="" data-toggle="modal" data-target="#modal-swatches">Swatches</a></li>
 										</ul>
@@ -101,8 +100,7 @@
 			</div>
 		</header>
 
-<!-- MAIN CONTENT -->
-		<!-- <section id="splash" style="background-image: url('https://source.unsplash.com/user/werder12/1600x900')"> -->
+		<!-- MAIN CONTENT -->
 		<section id="splash">
 			<div class="section-content">
 				<div class="section-wrapper cell">
@@ -112,7 +110,7 @@
 								<div class="col-lg-24">
 										
 									<h1>splash title</h1>
-									<h2>catchy subheading</h2>
+									<h2>subheading</h2>
 
 								</div>							
 							</div>						
@@ -129,6 +127,314 @@
 
 						<h3>Snippets</h3>
 						
+						<div aria-multiselectable="true" id="accordion" role="tablist">
+							<div class="card">
+								<div class="card-header" id="headingOne" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne">Add an 'Options' page for ACF</a></h5>
+								</div>
+								<div aria-labelledby="headingOne" class="collapse show" id="collapseOne" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Add an 'Options' page for ACF
+if( function_exists('acf_add_options_page') ) {	
+	acf_add_options_page();
+}
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Add extra buttons to the Wordpress WYSIWIG editor</a></h5>
+								</div>
+								<div aria-labelledby="headingTwo" class="collapse" id="collapseTwo" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Add extra buttons to the Wordpress WYSIWIG editor
+function my_mce_buttons_3( $buttons ) {	
+
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
+	$buttons[] = 'hr';
+	$buttons[] = 'del';
+	$buttons[] = 'fontselect';
+	$buttons[] = 'fontsizeselect';
+	$buttons[] = 'cleanup';
+	$buttons[] = 'styleselect';
+
+	return $buttons;
+}
+add_filter( 'mce_buttons_3', 'my_mce_buttons_3' );
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseThree" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Echo the content of a page or post</a></h5>
+								</div>
+								<div aria-labelledby="headingThree" class="collapse" id="collapseThree" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Echo the content of a page or post
+echo apply_filters('the_content', $section->post_content);
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFour" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseFour" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Provide an absolute path for the project</a></h5>
+								</div>
+								<div aria-labelledby="headingFour" class="collapse" id="collapseFour" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Provide an absolute path for the project
+echo get_stylesheet_directory_uri().'/...'
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFive" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseFive" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFive">Provide an absolute path for the project</a></h5>
+								</div>
+								<div aria-labelledby="headingFive" class="collapse" id="collapseFive" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Provide an absolute path for the project
+echo get_stylesheet_directory_uri().'/...'
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingSix" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseSix" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseSix">Get template part</a></h5>
+								</div>
+								<div aria-labelledby="headingSix" class="collapse" id="collapseSix" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Get template part 'section-splash.php'
+get_template_part('section', 'splash');
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingSeven" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseSeven" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseSeven">Change the default WP 'read more' ellipsis + Limit the length of the excerpt</a></h5>
+								</div>
+								<div aria-labelledby="headingSeven" class="collapse" id="collapseSeven" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Change the default WP 'read more' ellipsis
+function new_excerpt_more($more) {
+	return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+// Limit the length of the excerpt by number of words
+function custom_excerpt_length( $length ) {
+	return 55; // 55 by WP Default
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingEight" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseEight" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseEight">Get template part</a></h5>
+								</div>
+								<div aria-labelledby="headingEight" class="collapse" id="collapseEight" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Get template part 'section-splash.php'
+get_template_part('section', 'splash');
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingNine" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseNine" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseNine">Make all modules the height of the largest one</a></h5>
+								</div>
+								<div aria-labelledby="headingNine" class="collapse" id="collapseNine" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Make all modules the height of the largest one
+    // get an array of all element heights
+    var elemHeights = $('.class-of-element').map(function() {
+        return $(this).height();
+    }).get();
+    
+    // Math.max takes a variable number of arguments
+    // `apply` is equivalent to passing each height as an argument
+    var maxHeight = Math.max.apply(null, elemHeights);
+
+    if (document.documentElement.clientWidth > 768) {
+        $('.class-of-element').height(maxHeight);
+    }
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTen" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseTen" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTen">Render an ACF image field using ID</a></h5>
+								</div>
+								<div aria-labelledby="headingTen" class="collapse" id="collapseTen" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Render an ACF image field using ID
+// if '$img is not empty' is TRUE run wp_get_att ($ID, SIZE) while if it is FALSE return string
+<?php echo !empty($img) ? wp_get_attachment_image($img['ID'], 'masthead') : 'Img failed'; ?>
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingEleven" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseEleven" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseEleven">Edit the markup of a WP-generated menu</a></h5>
+								</div>
+								<div aria-labelledby="headingEleven" class="collapse" id="collapseEleven" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Edit the markup of a WP-generated menu
+add_filter( 'wp_setup_nav_menu_item','menu_markup' );
+function menu_markup($item) {
+	
+	// Do not apply to menus in the back end
+	if ( is_admin() ) {
+		return $item;
+	}
+	
+	// Add a class to the <li> element of each item
+		$item->classes[] = 'new-class';
+
+
+		
+	// Add a div/span to every CHARACTER in each item
+    	$str = $item->title; // Set a variable($str) to the element that requires marking(item title)
+    	$new_string = ''; // Establish a new array
+
+		for ($i=0; $i < strlen($str); $i++) { // Get the length of the item's string, count it, and for each count...
+			$new_string .= '<span>'. $str[$i] .'</span>'; // ... create the new string.
+		}
+
+		$item->title = $new_string; // Change to new string!
+
+    return $item; // And return it
+}
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwelve" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseTwelve" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwelve">Get addresse/s from Swell Admin 'Contact Details'</a></h5>
+								</div>
+								<div aria-labelledby="headingTwelve" class="collapse" id="collapseTwelve" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Get addresse/s from Swell Admin 'Contact Details'
+$address = sa_get_addresses(); // This gathers an array of all addresses
+$addresses = sa_get_address(0); // This gathers a single address according to index (0 being the first)
+$phone = sa_get_number_for_address(0, 'Phone'); // Get just the phone value 
+$email = sa_get_social_handle('email'); // Get just the email value
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThirteen" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseThirteen" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThirteen">Looping with custom post types</a></h5>
+								</div>
+								<div aria-labelledby="headingThirteen" class="collapse" id="collapseThirteen" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Custom post types
+$args = array(
+	'post_type' => 'post',
+	'posts_per_page' => -1,
+);
+$news = get_posts($args);
+foreach ( $news as $post ) {
+    setup_postdata( $post );
+
+    // Markup
+}
+
+
+
+OR
+
+
+
+$study_category = get_terms( 'case-study-category', array(
+    'hide_empty' => true,
+    'orderby' => 'date',
+    'order' => 'DESC',
+));
+foreach ( $study_category as $category ) {
+	$args = array(
+        'post_type' => 'case-study',
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+		'order' => 'ASC',
+
+        'tax_query' => array(
+			array(
+				'taxonomy' => 'case-study-category',
+				'field' => 'slug',
+				'terms' => $category->slug
+			)
+		)
+    );
+    $case_studies = get_posts($args);
+
+    foreach ( $case_studies as $post ) {
+        setup_postdata( $post );
+
+        // Markup
+    }
+}
+
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFourteen" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseFourteen" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFourteen">Enqueue a Google font</a></h5>
+								</div>
+								<div aria-labelledby="headingFourteen" class="collapse" id="collapseFourteen" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Enqueue a Google font
+wp_enqueue_style( 'Google Fonts', "https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Work+Sans:300,400,500,600,700", null, $style_time, 'screen' );
+</pre>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFourteen" role="tab">
+									<h5 class="mb-0"><a aria-controls="collapseFifteen" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFifteen">Regex</a></h5>
+								</div>
+								<div aria-labelledby="headingFifteen" class="collapse" id="collapseFifteen" role="tabpanel">
+									<div class="card-block">
+<pre>
+// Regex
+// Select everything between the TDs
+(?s)(?<=<td>)(.+?)(?=</td>)
+</pre>
+									</div>
+								</div>
+							</div>
+						</div>
 
 					</div>							
 				</div>						
@@ -154,37 +460,9 @@
 				</div>						
 			</div>
 		</section>
-
-		<section id="two">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-24">
-							
-						<h4>H4w about some content?</h4>
-						<h5>H5, Specifically</h5>
-
-						<article>
-							<p>Palla (Italian for ball) is a traditional Tuscan ball game played in villages between Siena and Grosseto. It is also called palla EH! (or pallaeh!) because players call out eh! before serving.</p>
-
-							<p>Small handmade balls contain a lead pellet wrapped in rubber and wool with a leather cover. The game is played by facing teams who strike (not catch) the ball with either a bare or gloved hand. Courts are marked out with painted lines on town streets, but there is no net, and players can move between sides. Adjacent buildings, objects, and sometimes spectators, are considered "in play." Play does stop for oncoming automobiles. Similar to real tennis, a second bounce can result in a "chase" rather than an outright point, marked in chalk where the ball stops rolling.</p>
-
-							<p>Scoring is identical to that of tennis (15-30-40-game). In the variant called pallaventuno (or palla 21) each game counts as 7, and a set is won with three games (7 for the first, 14 for the second, and 21 for the third, hence the name given to the game). In the other variant, games are simply counted in progression (game 1, game 2). Pallacorda (or palla della corda) is an extinct form of the game where a cord was strung across the street. Pisa, Prato, Rome, Siena, and various Tuscan towns still have streets named via Pallacorda or via Della Corda.</p>
-
-							<p>Palla is of interest to those who study the history of tennis, as it provides some insight into the development of the more contemporarily popular sport. Given the similarities of scoring and the use of chases, it is highly likely palla and tennis share a common sporting ancestor, the various games of palla being more primal in form.</p>
-
-							<p>The fact that real tennis was originally played without racquets is well documented. The name of the sport in French is jeu de paume, or game of the palm (of the hand). However, the development of the net is documented less well. In real tennis the net is also referred to sometimes as "the line." Palla eh! uses only a line painted on the ground to mark territory, and this is probably all it was originally. The cord was added for pallacorda probably just to keep the players on their respective sides of the court, and a ball that went under the cord, yet across the line, was probably still a fair shot. Later illustrations of pallacorda and tennis show tassels hung from the cord to indicate if a ball went below the cord. The net was merely an enhancement on the tassels, and it now serves three functions: marking territory, controlling player movement, and restricting the flight of the ball. When modern lawn tennis adopted real tennis' net, it also brought with it these three functions.</p>
-
-							<p>The fact that variants of palla are all street games, and that they are clearly related to real tennis suggests something of the development of the latter sport's court. It had been assumed that a real tennis court developed from the layout of monastery cloisters. This is mainly due to the early popularity of the game among clerics, and similarities of some court features to a cloister. However, this theory has two problems. Cloisters are usually square, while a tennis court is much longer than it is wide. Secondly, some of the similar features of tennis courts were actually introduced in the 16th century, and earlier layouts were less similar to cloisters. The study of palla has led many to suggest that the first tennis courts were made by those who wanted to play the street game, but could afford a more private and much cleaner setting. Similarities to cloisters in later court designs could either be coincidence, or intentional innovations. The proportions of the court and features such as penthouses and windows could easily relate to medieval streets.
-							</p>
-						</article>
-
-					</div>							
-				</div>						
-			</div>
-		</section>
 	</div>
 
-<!-- FOOTER -->
+	<!-- FOOTER -->
 	<footer id="footer">
 	    <div class="section-wrapper cell">
 	        <div class="cell-content">

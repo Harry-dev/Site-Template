@@ -9,6 +9,18 @@
 	],
 "creatorBuild": "25849",
 "files": {
+	"\/_snippets.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_snippets.php",
+		"oF": 0
+		},
+	"\/_updates.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/_updates.html",
+		"oF": 0
+		},
 	"\/assets\/css\/swiper.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1346,12 +1358,6 @@
 		"oAP": "\/resources\/BMW.tmTheme",
 		"oF": 0
 		},
-	"\/snippets.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/snippets.php",
-		"oF": 0
-		},
 	"\/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1361,12 +1367,6 @@
 		"oAP": "\/style-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"\/updates.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/updates.html",
-		"oF": 0
 		}
 	},
 "hooks": [

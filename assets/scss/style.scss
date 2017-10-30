@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.0
+* Version: 3.0.1
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 
@@ -230,7 +230,7 @@
 
 
 	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
-	// Written Like: @include staggered-transition(400, 200);
+	// Written Like: @include delay-transition(400, 12, 200);
 		@mixin delay-transition($offset: 1s, $count: 10, $delay: 50) {
 			@for $i from 1 through $count {
 				$time: ($i * $offset) + $delay;
@@ -284,14 +284,6 @@
    	// BUTTONS
 		.btn {
 			margin: 2rem;
-
-			&.btn-primary {
-				background-color: $color5;
-			}
-
-			&.btn-secondary {
-				background-color: $color4;
-			}
 		}
 
 
@@ -335,6 +327,12 @@
 		}
 
 
+	// ACCORDION
+		#accordion {
+			margin:  $section-padding;
+		}	
+
+
 
 /* ==========================================================================
    TYPOGRAPHY
@@ -370,6 +368,11 @@
 
 	h6, .h6 {
 
+	}
+
+	pre {
+		font-size: 1.6rem;
+		text-align: left;
 	}
 
 	p, .p {
@@ -477,8 +480,9 @@ section {
 	@include bg-cover;
 }
 
-#one {
-	background-color: lighten($grey, 10%);
+#zero {
+	height: 100%;
+	background-color: $white;
 }
 
 #two {
