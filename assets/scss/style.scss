@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.2
+* Version: 3.0.3
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 
@@ -133,37 +133,6 @@
 
 
 /* ==========================================================================
-   UTILITY MIX-INS
-   ========================================================================== */
-
-	// Position an element absolute and centre it horizontally
-		@mixin centre-absolute {
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-		}
-
-
-	// Make an element fill it's parent DIV
-		@mixin fill-container {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-
-	// Quick padding/margin settings
- 		@mixin spacing($spacing-padding, $spacing-margin){
-			padding: $spacing-padding;
-			margin: $spacing-margin;
- 		}	
-
-
-
-/* ==========================================================================
    MIX-INS
    ========================================================================== */
 	 	
@@ -179,20 +148,13 @@
 		}
 
 
-	// Background Contain - BG Image with no repeat, center positioning, and contained to the element 
-	// NOT neccessary for SVG backgrounds - they have it built in with the 'svgBackgroundImg' mixin below
-		@mixin bg-contain {
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center center;
-		}
-
-
-	// Background Cover - BG Image with no repeat, center positioning, and covering the element 
-		@mixin bg-cover {
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
+		@mixin padding($top: 1rem, $sides: 2rem) {
+			padding : {
+				top: $top;
+				right: $sides;
+				bottom: $top;
+				left: $sides;
+			}
 		}
 
 
@@ -204,15 +166,8 @@
 
 	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
 	// Use the variables to specify gradient colours + stop points
-		@mixin gradient-bg {
-			$gradColor1: $color1;
-			$gradColor2: $color3;
-			$gradColor3: $color5;
-
-			$start: 0%;
-			$middle: 50%;
-			$end: 100%;
-
+	// Written like: @include gradient-bg($white, $color1, $black, 10%, 55%, 85%);
+		@mixin gradient-bg($gradColor1, $gradColor2, $gradColor3, $start: 0%, $middle: 50%, $end: 100%) {	
 			background: $color2; /* Old browsers */
 			background: -moz-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* FF3.6-15 */
 			background: -webkit-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* Chrome10-25,Safari5.1-6 */
@@ -221,24 +176,23 @@
  		}
 
 
-	// Standard 'no-content' pseudo-element settings
-		@mixin pseudo {
-			content: '';
-			display: block;
-			position: absolute;
-		}			
-
-
 	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
 	// Written Like: @include delay-transition(400, 12, 200);
 		@mixin delay-transition($offset: 1s, $count: 10, $delay: 50) {
 			@for $i from 1 through $count {
 				$time: ($i * $offset) + $delay;
 				&:nth-child(#{$i}) {
-					transition-delay: $time;
+					transition-delay: $time + ms;
 				}
 			}
 		}
+
+
+	// Quick padding/margin settings
+ 		@mixin spacing($spacing-padding, $spacing-margin){
+			padding: $spacing-padding;
+			margin: $spacing-margin;
+ 		}
 
 
 	// Easily set a background image when it is in SVG format
@@ -256,24 +210,73 @@
 		}
 
 
+
+/* ==========================================================================
+   EXTENDS - Common Base Styles (AKA 'Mixins with no arguments')
+   ========================================================================== */
+	
+	// Background Contain - BG Image with no repeat, center positioning, and contained to the element 
+	// NOT neccessary for SVG backgrounds - they have it built in with the 'svgBackgroundImg' mixin below
+		.bg-contain {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Background Cover - BG Image with no repeat, center positioning, and covering the element 
+		.bg-cover {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+
+	// Position an element absolute and centre it horizontally
+		.centre-absolute {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+
+	// Make an element fill it's parent DIV
+		.fill-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	// Standard 'no-content' pseudo-element settings
+		.pseudo {
+			content: '';
+			display: block;
+			position: absolute;
+		}
+
+
 	// TRANSITIONS:
-		@mixin transition-xxs { transition: all 0.15s ease-out; }
+		.transition-xxs { transition: all 0.15s ease-out; }
 
-		@mixin transition-xs { transition: all 0.3s ease-out; }
+		.transition-xs { transition: all 0.3s ease-out; }
 
-		@mixin transition-sm { transition: all 0.5s ease-out; }		
+		.transition-sm { transition: all 0.5s ease-out; }		
 
-		@mixin transition-md { transition: all 0.7s ease-out; }
+		.transition-md { transition: all 0.7s ease-out; }
 
-		@mixin transition-lg { transition: all 1.2s ease-out; }
+		.transition-lg { transition: all 1.2s ease-out; }
 
-		@mixin transition-xl { transition: all 1.6s ease-out; }  	
+		.transition-xl { transition: all 1.6s ease-out; }  	
 
-		@mixin transition-xxl { transition: all 2.2s ease-out; }   
+		.transition-xxl { transition: all 2.2s ease-out; }   
 
-		@mixin ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
+		.ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
 
-		@mixin ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }
+		.ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }	
 
 
 
@@ -286,7 +289,7 @@
 			margin: 2rem;
 
 			&.btn-primary {
-				@include gradient-bg;
+				@include gradient-bg($color1, $black, $charcoal, 0%, 60%, 85%);
 				position: fixed;
 				width: 5rem;
 				height: 5rem;
@@ -294,7 +297,8 @@
 				right: 2.5rem;
 				border-radius: 100%;
 				border-color: $white;
-				@include transition-xs;
+				z-index: 99;
+				@extend .transition-xs;
 
 				&:hover {
 					border-color: $charcoal;
@@ -325,7 +329,7 @@
 					text-shadow: none;
 					color: $highlight-color;
 					opacity: 1;
-					@include transition-xs;
+					@extend .transition-xs;
 
 					&:hover {
 						color: $smoke;
@@ -447,7 +451,7 @@
 						margin: 0 2.5rem;
 						color: $color1;
 						background-color: $charcoal;
-						@include transition-xs;
+						@extend .transition-xs;
 
 						&:hover {
 							@include border($color2);
@@ -462,6 +466,33 @@
 				}
 			}
 		} 
+
+
+
+/* ==========================================================================
+   LOAD + SCROLL EFFECTS
+   ========================================================================== */
+
+	.fade-in-children {
+		* {
+			opacity: 0;
+			@extend .transition-lg;
+			@include delay-transition(200, 12, 400);
+		}
+
+		&.faded {
+			* {
+				opacity: 1;
+			}
+		}
+	}
+
+	.fade-in {
+		opacity: 0;
+		@extend .transition-xs;
+
+		&.faded { opacity: 1; }
+	}
 
 
 
@@ -494,7 +525,7 @@ section {
 #splash {
 	height: 100vh;
 	background-color: $smoke;
-	@include bg-cover;
+	@extend .bg-cover;
 }
 
 #zero {
@@ -502,7 +533,7 @@ section {
 	background-color: $white;
 }
 
-#two {
+#one {
 	background-color: $grey;
 }			
 
@@ -621,7 +652,7 @@ footer {
 			html.touch & {
 				select {
 					display: block !important;
-					@include fill-container;
+					@extend .fill-container;
 					opacity: 0;
 					z-index: 10;
 					cursor: pointer;

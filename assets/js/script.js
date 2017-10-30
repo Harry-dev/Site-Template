@@ -1,4 +1,4 @@
-var SD_Theme;
+var Template;
 
 ;(function ( $, window, document, undefined ){
 
@@ -8,17 +8,18 @@ var SD_Theme;
   * Object for namespacing theme functions.
   */
 
-	SD_Theme = {
+	Template = {
 
 	 /**
 	  * Initialiser.
 	  */
 
 		init: function(){
-			SD_Theme.initMobileMenu();
+			Template.initMobileMenu();
+			Template.initFadeIn();
 		},
 
-	 /**
+	/**
 	  * Display suite drawer that opens from the top
 	  */
 
@@ -58,6 +59,29 @@ var SD_Theme;
 
 		},
 
+	/**
+	  * Display suite drawer that opens from the top
+	  */
+
+		initFadeIn: function(){
+			var $fadeIn = $('.fade-in-children, .fade-in');
+			var $windowTop = $(window).scrollTop();
+			var $windowScrolled = $windowTop + $(window).height();
+
+			function fadeCheck() {
+				var $elTop = $(this).offset().top + 500;
+				console.log($windowTop, $windowScrolled, $elTop);
+
+				if ($elTop < $windowScrolled) {
+					$( this ).addClass('faded');
+				} else if ($windowTop + $windowScrolled > $elTop) {
+					$( this ).addClass('faded');
+				}
+			}
+
+			$fadeIn.each( fadeCheck );
+		},
+
 	};
 
  /**
@@ -65,7 +89,7 @@ var SD_Theme;
   */
 
 	$(document).ready(function() {
-		SD_Theme.init();
+		Template.init();
 	});
 
 })(jQuery, window, document);

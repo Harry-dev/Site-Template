@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.2
+* Version: 3.0.3
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 /* ==========================================================================
@@ -7238,11 +7238,66 @@ ul#swatches-ul {
    GLOBAL VARIABLES
    ========================================================================== */
 /* ==========================================================================
-   UTILITY MIX-INS
-   ========================================================================== */
-/* ==========================================================================
    MIX-INS
    ========================================================================== */
+/* ==========================================================================
+   EXTENDS - Common Base Styles (AKA 'Mixins with no arguments')
+   ========================================================================== */
+.bg-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.bg-cover, #splash {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.centre-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.fill-container, html.touch .swl-select-wrapper select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.pseudo {
+  content: '';
+  display: block;
+  position: absolute; }
+
+.transition-xxs {
+  transition: all 0.15s ease-out; }
+
+.transition-xs, .btn.btn-primary, .modal .modal-header button.close, nav ul li a, .fade-in {
+  transition: all 0.3s ease-out; }
+
+.transition-sm {
+  transition: all 0.5s ease-out; }
+
+.transition-md {
+  transition: all 0.7s ease-out; }
+
+.transition-lg, .fade-in-children * {
+  transition: all 1.2s ease-out; }
+
+.transition-xl {
+  transition: all 1.6s ease-out; }
+
+.transition-xxl {
+  transition: all 2.2s ease-out; }
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1); }
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0.34, 0.36, 0.06, 1.01); }
+
 /* ==========================================================================
    ELEMENTS - Modals, Buttons, Tabs, Burgers etc..
    ========================================================================== */
@@ -7253,7 +7308,7 @@ ul#swatches-ul {
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #E53C42 0%, #263338 50%, #263338 100%);
+    background: linear-gradient(to right, #E53C42 0%, #0C1014 60%, #30393D 85%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradColor1', endColorstr='$gradColor3',GradientType=1 );
     /* IE6-9 */
@@ -7264,7 +7319,7 @@ ul#swatches-ul {
     right: 2.5rem;
     border-radius: 100%;
     border-color: #F9FFFF;
-    transition: all 0.3s ease-out; }
+    z-index: 99; }
     .btn.btn-primary:hover {
       border-color: #30393D; }
 
@@ -7280,8 +7335,7 @@ ul#swatches-ul {
     font-size: 2.5rem;
     text-shadow: none;
     color: #E53C42;
-    opacity: 1;
-    transition: all 0.3s ease-out; }
+    opacity: 1; }
     .modal .modal-header button.close:hover {
       color: #D5D9D9; }
 
@@ -7342,14 +7396,51 @@ nav ul {
       padding: 1rem 5.5rem;
       margin: 0 2.5rem;
       color: #E53C42;
-      background-color: #30393D;
-      transition: all 0.3s ease-out; }
+      background-color: #30393D; }
       nav ul li a:hover {
         border: 1px solid #263338;
         background-color: transparent;
         color: #D5D9D9; }
       nav ul li a:focus {
         border-color: #263338; }
+
+/* ==========================================================================
+   LOAD + SCROLL EFFECTS
+   ========================================================================== */
+.fade-in-children * {
+  opacity: 0; }
+  .fade-in-children *:nth-child(1) {
+    transition-delay: 600ms; }
+  .fade-in-children *:nth-child(2) {
+    transition-delay: 800ms; }
+  .fade-in-children *:nth-child(3) {
+    transition-delay: 1000ms; }
+  .fade-in-children *:nth-child(4) {
+    transition-delay: 1200ms; }
+  .fade-in-children *:nth-child(5) {
+    transition-delay: 1400ms; }
+  .fade-in-children *:nth-child(6) {
+    transition-delay: 1600ms; }
+  .fade-in-children *:nth-child(7) {
+    transition-delay: 1800ms; }
+  .fade-in-children *:nth-child(8) {
+    transition-delay: 2000ms; }
+  .fade-in-children *:nth-child(9) {
+    transition-delay: 2200ms; }
+  .fade-in-children *:nth-child(10) {
+    transition-delay: 2400ms; }
+  .fade-in-children *:nth-child(11) {
+    transition-delay: 2600ms; }
+  .fade-in-children *:nth-child(12) {
+    transition-delay: 2800ms; }
+
+.fade-in-children.faded * {
+  opacity: 1; }
+
+.fade-in {
+  opacity: 0; }
+  .fade-in.faded {
+    opacity: 1; }
 
 /* ==========================================================================
    BODY
@@ -7368,16 +7459,13 @@ section {
 
 #splash {
   height: 100vh;
-  background-color: #D5D9D9;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; }
+  background-color: #D5D9D9; }
 
 #zero {
   height: 100%;
   background-color: #F9FFFF; }
 
-#two {
+#one {
   background-color: #858A8A; }
 
 footer {
@@ -7422,11 +7510,6 @@ form fieldset.sck-fieldset {
   position: relative; }
   html.touch .swl-select-wrapper select {
     display: block !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     opacity: 0;
     z-index: 10;
     cursor: pointer;

@@ -44,27 +44,27 @@
 //
 
 $white:  #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #868e96;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
+$grey-100: #f8f9fa;
+$grey-200: #e9ecef;
+$grey-300: #dee2e6;
+$grey-400: #ced4da;
+$grey-500: #adb5bd;
+$grey-600: #868e96;
+$grey-700: #495057;
+$grey-800: #343a40;
+$grey-900: #212529;
 $black:  #000;
 
-$grays: (
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  900: $gray-900
+$greys: (
+  100: $grey-100,
+  200: $grey-200,
+  300: $grey-300,
+  400: $grey-400,
+  500: $grey-500,
+  600: $grey-600,
+  700: $grey-700,
+  800: $grey-800,
+  900: $grey-900
 );
 
 $blue:    #007bff;
@@ -90,19 +90,19 @@ $colors: (
   teal: $teal,
   cyan: $cyan,
   white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
+  grey: $grey-600,
+  grey-dark: $grey-800
 );
 
 $theme-colors: (
   primary: $blue,
-  secondary: $gray-600,
+  secondary: $grey-600,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
-  light: $gray-100,
-  dark: $gray-800
+  light: $grey-100,
+  dark: $grey-800
 );
 
 // Set a specific jump point for requesting color jumps
@@ -151,7 +151,7 @@ $sizes: (
 // Settings for the `<body>` element.
 
 $body-bg:       $white;
-$body-color:    $gray-900;
+$body-color:    $grey-900;
 
 // Links
 //
@@ -271,9 +271,9 @@ $lead-font-weight: 300;
 
 $small-font-size: 80%;
 
-$text-muted: $gray-600;
+$text-muted: $grey-600;
 
-$blockquote-small-color:  $gray-600;
+$blockquote-small-color:  $grey-600;
 $blockquote-font-size:    ($font-size-base * 1.25);
 
 $hr-border-color: rgba($black,.1);
@@ -304,15 +304,15 @@ $table-hover-bg:                rgba($black,.075);
 $table-active-bg:               $table-hover-bg;
 
 $table-border-width:            $border-width;
-$table-border-color:            $gray-200;
+$table-border-color:            $grey-200;
 
-$table-head-bg:                 $gray-200;
-$table-head-color:              $gray-700;
+$table-head-bg:                 $grey-200;
+$table-head-color:              $grey-700;
 
-$table-inverse-bg:              $gray-900;
+$table-inverse-bg:              $grey-900;
 $table-inverse-accent-bg:       rgba($white, .05);
 $table-inverse-hover-bg:        rgba($white, .075);
-$table-inverse-border-color:    lighten($gray-900, 7.5%);
+$table-inverse-border-color:    lighten($grey-900, 7.5%);
 $table-inverse-color:           $body-bg;
 
 
@@ -337,7 +337,7 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba(
 $btn-focus-box-shadow:           0 0 0 3px rgba(theme-color("primary"), .25);
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
 
-$btn-link-disabled-color:        $gray-600;
+$btn-link-disabled-color:        $grey-600;
 
 $btn-block-spacing-y:            .5rem;
 
@@ -352,9 +352,9 @@ $btn-transition:                 all .15s ease-in-out;
 // Forms
 
 $input-bg:                       $white;
-$input-disabled-bg:              $gray-200;
+$input-disabled-bg:              $grey-200;
 
-$input-color:                    $gray-700;
+$input-color:                    $grey-700;
 $input-border-color:             rgba($black,.15);
 $input-btn-border-width:         $border-width; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black,.075);
@@ -368,7 +368,7 @@ $input-focus-border-color:       lighten(theme-color("primary"), 25%);
 $input-focus-box-shadow:         $input-box-shadow, $btn-focus-box-shadow;
 $input-focus-color:              $input-color;
 
-$input-placeholder-color:        $gray-600;
+$input-placeholder-color:        $grey-600;
 
 $input-height-border:           $input-btn-border-width * 2;
 
@@ -394,7 +394,7 @@ $form-check-inline-margin-x: .75rem;
 
 $form-group-margin-bottom:       1rem;
 
-$input-group-addon-bg:           $gray-200;
+$input-group-addon-bg:           $grey-200;
 $input-group-addon-border-color: $input-border-color;
 
 $custom-control-gutter:   1.5rem;
@@ -406,8 +406,8 @@ $custom-control-indicator-bg:         #ddd;
 $custom-control-indicator-bg-size:    50% 50%;
 $custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black,.1);
 
-$custom-control-indicator-disabled-bg:       $gray-200;
-$custom-control-description-disabled-color:  $gray-600;
+$custom-control-indicator-disabled-bg:       $grey-200;
+$custom-control-description-disabled-color:  $grey-600;
 
 $custom-control-indicator-checked-color:      $white;
 $custom-control-indicator-checked-bg:         theme-color("primary");
@@ -436,9 +436,9 @@ $custom-select-height:              $input-height ;
 $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-btn-line-height;
 $custom-select-color:               $input-color;
-$custom-select-disabled-color:      $gray-600;
+$custom-select-disabled-color:      $grey-600;
 $custom-select-bg:            $white;
-$custom-select-disabled-bg:   $gray-200;
+$custom-select-disabled-bg:   $grey-200;
 $custom-select-bg-size:       8px 10px; // In pixels because image dimensions
 $custom-select-indicator-color: #333;
 $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
@@ -459,14 +459,14 @@ $custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem theme-color("pr
 $custom-file-padding-y:     1rem;
 $custom-file-padding-x:     .5rem;
 $custom-file-line-height:   1.5;
-$custom-file-color:         $gray-700;
+$custom-file-color:         $grey-700;
 $custom-file-bg:            $white;
 $custom-file-border-width:  $border-width;
 $custom-file-border-color:  $input-border-color;
 $custom-file-border-radius: $border-radius;
 $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05);
 $custom-file-button-color:  $custom-file-color;
-$custom-file-button-bg:     $gray-200;
+$custom-file-button-bg:     $grey-200;
 $custom-file-text: (
   placeholder: (
     en: "Choose file..."
@@ -492,22 +492,22 @@ $dropdown-spacer:                .125rem;
 $dropdown-bg:                    $white;
 $dropdown-border-color:          rgba($black,.15);
 $dropdown-border-width:          $border-width;
-$dropdown-divider-bg:            $gray-200;
+$dropdown-divider-bg:            $grey-200;
 $dropdown-box-shadow:            0 .5rem 1rem rgba($black,.175);
 
-$dropdown-link-color:            $gray-900;
-$dropdown-link-hover-color:      darken($gray-900, 5%);
-$dropdown-link-hover-bg:         $gray-100;
+$dropdown-link-color:            $grey-900;
+$dropdown-link-hover-color:      darken($grey-900, 5%);
+$dropdown-link-hover-bg:         $grey-100;
 
 $dropdown-link-active-color:     $component-active-color;
 $dropdown-link-active-bg:        $component-active-bg;
 
-$dropdown-link-disabled-color:   $gray-600;
+$dropdown-link-disabled-color:   $grey-600;
 
 $dropdown-item-padding-y:        .25rem;
 $dropdown-item-padding-x:        1.5rem;
 
-$dropdown-header-color:          $gray-600;
+$dropdown-header-color:          $grey-600;
 
 
 // Z-index master list
@@ -527,13 +527,13 @@ $zindex-tooltip:            1070;
 
 $nav-link-padding-y:            .5rem;
 $nav-link-padding-x:            1rem;
-$nav-link-disabled-color:       $gray-600;
+$nav-link-disabled-color:       $grey-600;
 
 $nav-tabs-border-color:                       #ddd;
 $nav-tabs-border-width:                       $border-width;
 $nav-tabs-border-radius:                      $border-radius;
-$nav-tabs-link-hover-border-color:            $gray-200;
-$nav-tabs-link-active-color:                  $gray-700;
+$nav-tabs-link-hover-border-color:            $grey-200;
+$nav-tabs-link-active-color:                  $grey-700;
 $nav-tabs-link-active-bg:                     $body-bg;
 $nav-tabs-link-active-border-color:           #ddd;
 
@@ -587,14 +587,14 @@ $pagination-border-width:              $border-width;
 $pagination-border-color:              #ddd;
 
 $pagination-hover-color:               $link-hover-color;
-$pagination-hover-bg:                  $gray-200;
+$pagination-hover-bg:                  $grey-200;
 $pagination-hover-border-color:        #ddd;
 
 $pagination-active-color:              $white;
 $pagination-active-bg:                 theme-color("primary");
 $pagination-active-border-color:       theme-color("primary");
 
-$pagination-disabled-color:            $gray-600;
+$pagination-disabled-color:            $grey-600;
 $pagination-disabled-bg:               $white;
 $pagination-disabled-border-color:     #ddd;
 
@@ -602,7 +602,7 @@ $pagination-disabled-border-color:     #ddd;
 // Jumbotron
 
 $jumbotron-padding:              2rem;
-$jumbotron-bg:                   $gray-200;
+$jumbotron-bg:                   $grey-200;
 
 
 // Cards
@@ -699,7 +699,7 @@ $modal-content-box-shadow-sm-up: 0 5px 15px rgba($black,.5);
 
 $modal-backdrop-bg:           $black;
 $modal-backdrop-opacity:      .5;
-$modal-header-border-color:   $gray-200;
+$modal-header-border-color:   $grey-200;
 $modal-footer-border-color:   $modal-header-border-color;
 $modal-header-border-width:   $modal-content-border-width;
 $modal-footer-border-width:   $modal-header-border-width;
@@ -728,7 +728,7 @@ $alert-border-width:          $border-width;
 
 $progress-height:               1rem;
 $progress-font-size:            .75rem;
-$progress-bg:                   $gray-200;
+$progress-bg:                   $grey-200;
 $progress-border-radius:        $border-radius;
 $progress-box-shadow:           inset 0 .1rem .1rem rgba($black,.1);
 $progress-bar-color:            $white;
@@ -746,19 +746,19 @@ $list-group-border-radius:       $border-radius;
 $list-group-item-padding-y:      .75rem;
 $list-group-item-padding-x:      1.25rem;
 
-$list-group-hover-bg:                 $gray-100;
+$list-group-hover-bg:                 $grey-100;
 $list-group-active-color:             $component-active-color;
 $list-group-active-bg:                $component-active-bg;
 $list-group-active-border-color:      $list-group-active-bg;
 
-$list-group-disabled-color:      $gray-600;
+$list-group-disabled-color:      $grey-600;
 $list-group-disabled-bg:         $list-group-bg;
 
-$list-group-action-color:             $gray-700;
+$list-group-action-color:             $grey-700;
 $list-group-action-hover-color:       $list-group-action-color;
 
 $list-group-action-active-color:      $body-color;
-$list-group-action-active-bg:         $gray-200;
+$list-group-action-active-bg:         $grey-200;
 
 
 // Image thumbnails
@@ -775,7 +775,7 @@ $thumbnail-transition:        all .2s ease-in-out;
 // Figures
 
 $figure-caption-font-size: 90%;
-$figure-caption-color:     $gray-600;
+$figure-caption-color:     $grey-600;
 
 
 // Breadcrumbs
@@ -784,9 +784,9 @@ $breadcrumb-padding-y:          .75rem;
 $breadcrumb-padding-x:          1rem;
 $breadcrumb-item-padding:       .5rem;
 
-$breadcrumb-bg:                 $gray-200;
-$breadcrumb-divider-color:      $gray-600;
-$breadcrumb-active-color:       $gray-600;
+$breadcrumb-bg:                 $grey-200;
+$breadcrumb-divider-color:      $grey-600;
+$breadcrumb-active-color:       $grey-600;
 $breadcrumb-divider:            "/";
 
 
@@ -825,10 +825,10 @@ $code-font-size:              90%;
 $code-padding-y:              .2rem;
 $code-padding-x:              .4rem;
 $code-color:                  #bd4147;
-$code-bg:                     $gray-100;
+$code-bg:                     $grey-100;
 
 $kbd-color:                   $white;
-$kbd-bg:                      $gray-900;
+$kbd-bg:                      $grey-900;
 
-$pre-color:                   $gray-900;
+$pre-color:                   $grey-900;
 $pre-scrollable-max-height:   340px;
