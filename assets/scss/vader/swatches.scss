@@ -25,7 +25,7 @@ ul#swatches-ul {
 		&#tone4{background-color: $charcoal;}
 		&#tone5{background-color: $black;}
 
-		&#gradient1{width: 500px; @include gradient-bg;}
+		&#gradient1{width: 500px; @include gradient-bg($color1, $color3, $color5);}
 
 		span {
 			position: absolute;

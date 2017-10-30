@@ -60,26 +60,27 @@ var Template;
 		},
 
 	/**
-	  * Display suite drawer that opens from the top
+	  * Fade in items as they appear on screen
 	  */
 
 		initFadeIn: function(){
-			var $fadeIn = $('.fade-in-children, .fade-in');
-			var $windowTop = $(window).scrollTop();
-			var $windowScrolled = $windowTop + $(window).height();
 
-			function fadeCheck() {
-				var $elTop = $(this).offset().top + 500;
-				console.log($windowTop, $windowScrolled, $elTop);
+			$(window).on("load resize scroll",function(e){
+			    var $windowTop = $(window).scrollTop();
+				var $windowBottom = $windowTop + $(window).height();
+				var $elFade = $('.fade-in, .fade-in-children');
 
-				if ($elTop < $windowScrolled) {
-					$( this ).addClass('faded');
-				} else if ($windowTop + $windowScrolled > $elTop) {
-					$( this ).addClass('faded');
-				}
-			}
-
-			$fadeIn.each( fadeCheck );
+				$elFade.each(function() {
+					var $elTop = $( this ).offset().top + 500;
+			    	
+			    	// If height of window is greater than the element's position from the top
+			    	if( ($windowTop + $windowBottom) > $elTop ) {
+						$( this ).addClass('faded');
+					} else {
+						$( this ).removeClass('faded');
+					}
+			  	}); 
+			});
 		},
 
 	};

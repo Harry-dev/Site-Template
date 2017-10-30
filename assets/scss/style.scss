@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.3
+* Version: 3.0.4
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 
@@ -64,15 +64,10 @@
     
 			$color5: #263338;	    $black: #0C1014;
 			
-			@mixin gradient-bg {
-				$gradColor1: $color1;
-				$gradColor2: $color3;
-				$gradColor3: $color5;
-
-				$start: 0%;
-				$middle: 50%;
-				$end: 100%;
-
+		// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
+		// Use the variables to specify gradient colours + stop points
+		// Written like: @include gradient-bg($white, $color1, $black, 10%, 55%, 85%);
+			@mixin gradient-bg($gradColor1, $gradColor2, $gradColor3, $start: 0%, $middle: 50%, $end: 100%) {	
 				background: $color2; /* Old browsers */
 				background: -moz-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* FF3.6-15 */
 				background: -webkit-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* Chrome10-25,Safari5.1-6 */
@@ -100,21 +95,21 @@
 
 
 		// Font Mixins
-		 	@mixin font-aktiv { // Don't forget to find + replace after renaming
+		 	%font-aktiv { // Don't forget to find + replace after renaming
 		 		font-family: $font1;
 		 	}
 
-	 		@mixin font-proxima {
+	 		%font-proxima {
 		 		font-family: $font2;
 		 	}
 
-		 	@mixin font-awesome() {
+		 	%font-awesome {
 		 		font-family: 'FontAwesome';	
 		 		font-weight: normal !important;
 		 		font-style: normal !important;					
 		 	}  	
 		 	
-		 	@mixin ion-icons() {
+		 	%ion-icons {
 		 		font-family: 'Ionicons';
 		 		font-weight: normal !important;
 		 		font-style: normal !important;
@@ -136,7 +131,7 @@
    MIX-INS
    ========================================================================== */
 	 	
- 	//Push items that are fixed to top of the screen below the WP Admin Bar
+ 	// Push items that are fixed to top of the screen below the WP Admin Bar
 		@mixin admin-offset {
 			body.admin-bar & {
 				margin-top: 32px;
@@ -147,7 +142,8 @@
 			}
 		}
 
-
+	
+	// Padding
 		@mixin padding($top: 1rem, $sides: 2rem) {
 			padding : {
 				top: $top;
@@ -164,21 +160,9 @@
 		}		
 
 
-	// Bulletproof Gradient for use as a background (defaults to single colour on older browsers)
-	// Use the variables to specify gradient colours + stop points
-	// Written like: @include gradient-bg($white, $color1, $black, 10%, 55%, 85%);
-		@mixin gradient-bg($gradColor1, $gradColor2, $gradColor3, $start: 0%, $middle: 50%, $end: 100%) {	
-			background: $color2; /* Old browsers */
-			background: -moz-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* FF3.6-15 */
-			background: -webkit-linear-gradient(left,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to right,  $gradColor1 $start, $gradColor2 $middle, $gradColor3 $end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradColor1', endColorstr='$gradColor3',GradientType=1 ); /* IE6-9 */
- 		}
-
-
 	// Set the transition of multiple elements to delay incrementally (in Milliseconds)
-	// Written Like: @include delay-transition(400, 12, 200);
-		@mixin delay-transition($offset: 1s, $count: 10, $delay: 50) {
+	// Written Like: @include delay-transition(200, 12, 400);
+		@mixin delay-transition($offset: 200, $count: 12, $delay: 400) {
 			@for $i from 1 through $count {
 				$time: ($i * $offset) + $delay;
 				&:nth-child(#{$i}) {
@@ -186,13 +170,6 @@
 				}
 			}
 		}
-
-
-	// Quick padding/margin settings
- 		@mixin spacing($spacing-padding, $spacing-margin){
-			padding: $spacing-padding;
-			margin: $spacing-margin;
- 		}
 
 
 	// Easily set a background image when it is in SVG format
@@ -217,7 +194,7 @@
 	
 	// Background Contain - BG Image with no repeat, center positioning, and contained to the element 
 	// NOT neccessary for SVG backgrounds - they have it built in with the 'svgBackgroundImg' mixin below
-		.bg-contain {
+		%bg-contain {
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -225,7 +202,7 @@
 
 
 	// Background Cover - BG Image with no repeat, center positioning, and covering the element 
-		.bg-cover {
+		%bg-cover {
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -233,7 +210,7 @@
 
 
 	// Position an element absolute and centre it horizontally
-		.centre-absolute {
+		%centre-absolute {
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -242,7 +219,7 @@
 
 
 	// Make an element fill it's parent DIV
-		.fill-container {
+		%fill-container {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -252,7 +229,7 @@
 
 
 	// Standard 'no-content' pseudo-element settings
-		.pseudo {
+		%pseudo {
 			content: '';
 			display: block;
 			position: absolute;
@@ -260,23 +237,23 @@
 
 
 	// TRANSITIONS:
-		.transition-xxs { transition: all 0.15s ease-out; }
+		%transition-xxs { transition: all 0.15s ease-out; }
 
-		.transition-xs { transition: all 0.3s ease-out; }
+		%transition-xs { transition: all 0.3s ease-out; }
 
-		.transition-sm { transition: all 0.5s ease-out; }		
+		%transition-sm { transition: all 0.5s ease-out; }		
 
-		.transition-md { transition: all 0.7s ease-out; }
+		%transition-md { transition: all 0.7s ease-out; }
 
-		.transition-lg { transition: all 1.2s ease-out; }
+		%transition-lg { transition: all 1.2s ease-out; }
 
-		.transition-xl { transition: all 1.6s ease-out; }  	
+		%transition-xl { transition: all 1.6s ease-out; }  	
 
-		.transition-xxl { transition: all 2.2s ease-out; }   
+		%transition-xxl { transition: all 2.2s ease-out; }   
 
-		.ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
+		%ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
 
-		.ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }	
+		%ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }	
 
 
 
@@ -298,7 +275,7 @@
 				border-radius: 100%;
 				border-color: $white;
 				z-index: 99;
-				@extend .transition-xs;
+				@extend %transition-xs;
 
 				&:hover {
 					border-color: $charcoal;
@@ -329,7 +306,7 @@
 					text-shadow: none;
 					color: $highlight-color;
 					opacity: 1;
-					@extend .transition-xs;
+					@extend %transition-xs;
 
 					&:hover {
 						color: $smoke;
@@ -360,7 +337,7 @@
    ========================================================================== */
 
    	h1, h2, h3, h4, h5, h6, p, a {
-   		@include font-aktiv;
+   		@extend %font-aktiv;
    		margin: 0;
 
    		&.white { color: $white; }
@@ -451,7 +428,7 @@
 						margin: 0 2.5rem;
 						color: $color1;
 						background-color: $charcoal;
-						@extend .transition-xs;
+						@extend %transition-xs;
 
 						&:hover {
 							@include border($color2);
@@ -470,14 +447,15 @@
 
 
 /* ==========================================================================
-   LOAD + SCROLL EFFECTS
+   LOAD + SCROLL EFFECTS -- */ $fade-delay: 400; /*
    ========================================================================== */
-
+	
+	
 	.fade-in-children {
 		* {
+			@extend %transition-lg;
+			@include delay-transition(200, 12, $fade-delay);
 			opacity: 0;
-			@extend .transition-lg;
-			@include delay-transition(200, 12, 400);
 		}
 
 		&.faded {
@@ -488,8 +466,9 @@
 	}
 
 	.fade-in {
+		@extend %transition-md;
 		opacity: 0;
-		@extend .transition-xs;
+		transition-delay: $fade-delay + ms;
 
 		&.faded { opacity: 1; }
 	}
@@ -497,7 +476,7 @@
 
 
 /* ==========================================================================
-   BODY
+   BODY -- */ $header-height: 8rem; $footer-height: 40rem; /*
    ========================================================================== */
 		
 body {
@@ -508,7 +487,6 @@ body {
 
 
 // HEADER:
-$header-height: 8rem;
 header {
 	height: $header-height;
 	background-color: $black;
@@ -525,7 +503,7 @@ section {
 #splash {
 	height: 100vh;
 	background-color: $smoke;
-	@extend .bg-cover;
+	@extend %bg-cover;
 }
 
 #zero {
@@ -540,7 +518,6 @@ section {
 
 
 // FOOTER:
-$footer-height: 40rem;
 footer {
 	height: $footer-height;
 	background-color: $charcoal;
@@ -651,8 +628,8 @@ footer {
 			
 			html.touch & {
 				select {
+					@extend %fill-container;
 					display: block !important;
-					@extend .fill-container;
 					opacity: 0;
 					z-index: 10;
 					cursor: pointer;
