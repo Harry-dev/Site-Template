@@ -87,6 +87,8 @@
 	 	
 	 	@import url(assets/font/font-awesome.min.css);
 
+	 	@import url(assets/font/ionicons.min.css);
+
 		
 		// Font Stacks
 		 	$font1: 'aktiv-grotesk', helvetica, arial, sans-serif; 
@@ -109,7 +111,7 @@
 		 		font-style: normal !important;					
 		 	}  	
 		 	
-		 	%ion-icons {
+		 	%ion {
 		 		font-family: 'Ionicons';
 		 		font-weight: normal !important;
 		 		font-style: normal !important;
@@ -267,19 +269,31 @@
 
 			&.btn-primary {
 				@include gradient-bg($color1, $black, $charcoal, 0%, 60%, 85%);
+				@extend %transition-xs;
 				position: fixed;
 				width: 5rem;
 				height: 5rem;
 				bottom: 2.5rem;
 				right: 2.5rem;
-				border-radius: 100%;
 				border-color: $white;
 				z-index: 99;
-				@extend %transition-xs;
 
 				&:hover {
 					border-color: $charcoal;
 				}
+			}
+		}
+
+		.x-close {
+			background: transparent;
+			padding: 0;
+    		line-height: 1;
+    		border: none;
+
+			i {
+				@extend %ion;
+				font-size: 3.4rem;
+				color: $color1;
 			}
 		}
 
@@ -302,11 +316,11 @@
 				}
 
 				button.close {
+					@extend %transition-xs;
 					font-size: 2.5rem;
 					text-shadow: none;
 					color: $highlight-color;
 					opacity: 1;
-					@extend %transition-xs;
 
 					&:hover {
 						color: $smoke;
@@ -421,14 +435,14 @@
 					}
 
 					a {
-						@include border($charcoal); 
+						@include border($charcoal);
+						@extend %transition-xs; 
 						display: inline-block;
 						text-decoration: none $i;
 						padding: 1rem 5.5rem;
 						margin: 0 2.5rem;
 						color: $color1;
 						background-color: $charcoal;
-						@extend %transition-xs;
 
 						&:hover {
 							@include border($color2);
@@ -501,9 +515,9 @@ section {
 }
 
 #splash {
+	@extend %bg-cover;
 	height: 100vh;
 	background-color: $smoke;
-	@extend %bg-cover;
 }
 
 #zero {

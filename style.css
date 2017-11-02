@@ -18,6 +18,7 @@
  */
 @import url(assets/font/fonts.css);
 @import url(assets/font/font-awesome.min.css);
+@import url(assets/font/ionicons.min.css);
 @media print {
   *,
   *::before,
@@ -7237,6 +7238,11 @@ ul#swatches-ul {
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: "aktiv-grotesk", helvetica, arial, sans-serif; }
 
+.x-close i {
+  font-family: 'Ionicons';
+  font-weight: normal !important;
+  font-style: normal !important; }
+
 /* ==========================================================================
    GLOBAL VARIABLES
    ========================================================================== */
@@ -7286,11 +7292,19 @@ html.touch .swl-select-wrapper select {
     height: 5rem;
     bottom: 2.5rem;
     right: 2.5rem;
-    border-radius: 100%;
     border-color: #F9FFFF;
     z-index: 99; }
     .btn.btn-primary:hover {
       border-color: #30393D; }
+
+.x-close {
+  background: transparent;
+  padding: 0;
+  line-height: 1;
+  border: none; }
+  .x-close i {
+    font-size: 3.4rem;
+    color: #E53C42; }
 
 .modal .modal-dialog {
   max-width: 750px; }
