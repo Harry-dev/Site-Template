@@ -3,23 +3,23 @@
  */
 		
 	@mixin xl {
-  		@include media-breakpoint-up(xl) { @content; }
+  		@include media-breakpoint-down(xl) { @content; }
   	}
   	
   	@mixin lg {
-  		@include media-breakpoint-down(lg) { @content; }
+  		@include media-breakpoint-up(lg) { @content; }
   	}
   	
 	@mixin md {
-  		@include media-breakpoint-down(md) { @content; }
+  		@include media-breakpoint-up(md) { @content; }
 	}
 
 	@mixin sm {
-  		@include media-breakpoint-down(sm) { @content; }
+  		@include media-breakpoint-up(sm) { @content; }
 	}
 
 	@mixin xs {
-  		@include media-breakpoint-down(xs) { @content; }
+  		@include media-breakpoint-up(xs) { @content; }
 	}
   	
   	@mixin nav_visible {

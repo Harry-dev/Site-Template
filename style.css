@@ -7102,17 +7102,15 @@ a.text-dark:focus, a.text-dark:hover {
 
 html {
   font-family: arial, sans-serif;
-  font-size: 8.5px; }
-  @media (max-width: 767px) {
+  font-size: 8.5px;
+  font-size: 10px; }
+  @media (min-width: 576px) {
     html {
       font-size: 9px; } }
-  @media (max-width: 991px) {
+  @media (min-width: 768px) {
     html {
       font-size: 9.5px; } }
-  @media (max-width: 1199px) {
-    html {
-      font-size: 10px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     html {
       font-size: 10px; } }
 
