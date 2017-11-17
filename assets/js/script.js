@@ -15,9 +15,25 @@ var Template;
 	  */
 
 		init: function(){
+			Template.initScroll();
 			Template.initMobileMenu();
 			Template.initFadeIn();
 		},
+
+	/**
+	  * Add the class 'scroll' on any <a> element to make it smoothly scroll to anchor 
+	  * NOTE: Only works when Underswell is installed, or with the lib > assets > JS files (easings, scroll, etc..) 
+	  		placed in main assets folder)
+	  */	
+
+		initScroll: function(){
+
+			$(".scroll").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate( { scrollTop:$(this.hash).offset().top } , 1000);
+			} );
+
+		},	
 
 	/**
 	  * Display suite drawer that opens from the top

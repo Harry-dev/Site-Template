@@ -7353,11 +7353,21 @@ p, .p {
   /* Letter Spacing - tracking (50) divided by 1000 ems (aka + 3 decimal places) */
   letter-spacing: 0.05em; }
   p.browsehappy, .p.browsehappy {
+    position: relative;
+    background: red;
+    color: white;
+    padding: 40px;
+    font-size: 18px;
+    text-align: center;
+    border: 10px solid #cc0000;
     position: fixed;
     width: 50%;
     top: 50%;
     left: 25%;
     z-index: 999999999; }
+    p.browsehappy a, .p.browsehappy a {
+      color: white;
+      text-decoration: underline; }
 
 a:hover, a:focus, .a:hover, .a:focus {
   color: #E53C42; }
@@ -7488,7 +7498,19 @@ form fieldset.sck-fieldset {
 /**
 	 * =Miscellaneous
 	 */
-.form-placeholder-rules {
+::-webkit-input-placeholder {
+  color: #E53C42; }
+
+:-moz-placeholder {
+  color: #E53C42; }
+
+::-moz-placeholder {
+  color: #E53C42; }
+
+:-ms-input-placeholder {
+  color: #E53C42; }
+
+.placeholder {
   color: #E53C42; }
 
 .swl-select-wrapper {

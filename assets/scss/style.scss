@@ -175,9 +175,9 @@
 
 
 	// Easily set a background image when it is in SVG format
-	// Written like: @include svgBackgroundImg('assets/img/image');
+	// Written like: @include svg-bg('assets/img/image');
 		@mixin svg-bg($image-url){
-			background-image: url("${image-url}.svg");
+			background-image: url("#{$image-url}.svg");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -397,7 +397,7 @@
 		letter-spacing: 0.05em;
 
 		&.browsehappy {
-			// @include browsehappy;
+			@include browsehappy;
 			position: fixed;
 			width: 50%;
 			top: 50%;
@@ -631,8 +631,8 @@ footer {
 	 */
 
 		// Placeholder Rules
-		// This is a mixin (specfied in the vader/miscellaneous.less file) that is compatible cross-browser 
-		.form-placeholder-rules {
+		// This is a mixin (specfied in the vader/miscellaneous.scss file) that is compatible cross-browser 
+		@include placeholder {
 			color: $color1;
 		};	  
 
