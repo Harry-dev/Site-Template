@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.4
+* Version: 3.0.6
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 /* ==========================================================================
@@ -7262,14 +7262,14 @@ html.touch .swl-select-wrapper select {
   width: 100%;
   height: 100%; }
 
-.btn.btn-primary, .modal .modal-header button.close, nav ul li a {
-  transition: all 0.3s ease-out; }
+.btn.btn-primary, .modal .modal-header button.close, nav ul li a, form .wpcf7-response-output {
+  transition: all 0.3s cubic-bezier(0.34, 0.36, 0.06, 1.01); }
 
 .fade-in {
-  transition: all 0.7s ease-out; }
+  transition: all 0.7s cubic-bezier(0.34, 0.36, 0.06, 1.01); }
 
 .fade-in-children * {
-  transition: all 1.2s ease-out; }
+  transition: all 1.2s cubic-bezier(0.34, 0.36, 0.06, 1.01); }
 
 /* ==========================================================================
    ELEMENTS - Modals, Buttons, Tabs, Burgers etc..
@@ -7481,6 +7481,15 @@ form .form-group .btn:hover {
   background-color: inherit;
   color: #263338;
   border-bottom: 0.7rem solid #263338; }
+
+form .wpcf7-response-output {
+  clear: both;
+  margin: 4rem 0;
+  color: #30393D; }
+  form .wpcf7-response-output.wpcf7-validation-errors {
+    border-color: #263338; }
+  form .wpcf7-response-output.wpcf7-mail-sent-ok {
+    border-color: #E53C42; }
 
 /**
 	 * =Colliers

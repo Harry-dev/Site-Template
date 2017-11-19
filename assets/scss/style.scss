@@ -4,7 +4,7 @@
 * Author: Harry Burk
 * Designer: -
 * Organisation: Swell Design Group
-* Version: 3.0.4
+* Version: 3.0.6
 * Tags: harry, crisp, html5, bootstrap4, awesome
 */
 
@@ -238,24 +238,22 @@
 		}
 
 
-	// TRANSITIONS:
-		%transition-xxs { transition: all 0.15s ease-out; }
+	// TRANSITIONS - Ease-Out by default:
+		%transition-xxs { transition: all 0.15s cubic-bezier(.34, .36, .06, 1.01); }
 
-		%transition-xs { transition: all 0.3s ease-out; }
+		%transition-xs { transition: all 0.3s cubic-bezier(.34, .36, .06, 1.01); }
 
-		%transition-sm { transition: all 0.5s ease-out; }		
+		%transition-sm { transition: all 0.5s cubic-bezier(.34, .36, .06, 1.01); }		
 
-		%transition-md { transition: all 0.7s ease-out; }
+		%transition-md { transition: all 0.7s cubic-bezier(.34, .36, .06, 1.01); }
 
-		%transition-lg { transition: all 1.2s ease-out; }
+		%transition-lg { transition: all 1.2s cubic-bezier(.34, .36, .06, 1.01); }
 
-		%transition-xl { transition: all 1.6s ease-out; }  	
+		%transition-xl { transition: all 1.6s cubic-bezier(.34, .36, .06, 1.01); }  	
 
-		%transition-xxl { transition: all 2.2s ease-out; }   
+		%transition-xxl { transition: all 2.2s cubic-bezier(.34, .36, .06, 1.01); }   
 
 		%ease-in-out { transition-timing-function: cubic-bezier(.85, 0, 0.15, 1); }
-
-		%ease-out { transition-timing-function: cubic-bezier(.34, .36, .06, 1.01); }	
 
 
 
@@ -569,6 +567,21 @@ footer {
 						color: $color2;
 						border-bottom: 0.7rem solid $color3;
 					}
+				}
+			}
+
+			.wpcf7-response-output {
+				clear: both;
+				@extend %transition-xs;
+				margin: 4rem 0;
+				color: $charcoal; 
+
+				&.wpcf7-validation-errors {
+					border-color: $color5;
+				}
+
+				&.wpcf7-mail-sent-ok {
+					border-color: $color1;
 				}
 			}
 		}
